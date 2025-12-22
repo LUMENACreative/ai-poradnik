@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jak pisać dobre prompty do ChatGPT — poradnik krok po kroku</title>
+  <meta name="description" content="Prosty system pisania promptów do ChatGPT: rola, kontekst, cel i format. Gotowe szablony, przykłady i checklisty." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="/poradniki/jak-pisac-dobre-prompty-chatgpt.html" />
+
+  <!-- OG + Twitter + theme-color (dodane) -->
+  <meta name="theme-color" content="#0b0b0d" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:site_name" content="AI Poradnik — LUMENA Creative" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:title" content="Jak pisać dobre prompty do ChatGPT — poradnik krok po kroku" />
+  <meta property="og:description" content="Prosty system pisania promptów do ChatGPT: rola, kontekst, cel i format. Gotowe szablony, przykłady i checklisty." />
+  <meta property="og:url" content="https://lumena-creative.netlify.app/poradniki/jak-pisac-dobre-prompty-chatgpt.html" />
+  <meta property="og:image" content="https://lumena-creative.netlify.app/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jak pisać dobre prompty do ChatGPT — poradnik krok po kroku" />
+  <meta name="twitter:description" content="Prosty system pisania promptów do ChatGPT: rola, kontekst, cel i format. Gotowe szablony, przykłady i checklisty." />
+  <meta name="twitter:image" content="https://lumena-creative.netlify.app/og.jpg" />
+
+  <style>
+    :root{
+      --bg:#0b0b0d;
+      --panel:#121217;
+      --text:#f3f3f5;
+      --muted:#b8b8c3;
+      --gold:#d4af37;
+      --gold-2:#b9912a;
+      --line:rgba(255,255,255,.08);
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
+      --radius:18px;
+      --max:1100px;
+      --max-article: 820px;
+    }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      background:
+        radial-gradient(900px 450px at 20% 10%, rgba(212,175,55,.10), transparent 60%),
+        radial-gradient(700px 420px at 80% 25%, rgba(212,175,55,.07), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      font: 16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      letter-spacing:.2px;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:26px 18px; }
+
+    header{
+      position:sticky; top:0; z-index:40;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,11,13,.80), rgba(11,11,13,.35));
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      max-width:var(--max); margin:0 auto; padding:14px 18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700; letter-spacing:.6px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      box-shadow: 0 0 18px rgba(212,175,55,.35);
+    }
+    .menu{
+      display:flex; gap:14px; align-items:center;
+      font-size:14px; color:var(--muted);
+    }
+    .menu a{
+      padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+    }
+    .menu a:hover{
+      color:var(--text);
+      border-color: var(--line);
+      background: rgba(255,255,255,.03);
+    }
+
+    .card{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .article-hero{
+      padding: 32px 0 12px;
+    }
+    .article-hero .meta{
+      color: var(--muted);
+      font-size: 14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin: 10px 0 0;
+    }
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:7px 12px; border-radius:999px;
+      background: rgba(212,175,55,.10);
+      border: 1px solid rgba(212,175,55,.22);
+      color: #f6e6b3;
+      font-size:13px;
+      margin-bottom:14px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height:1.14;
+      letter-spacing:.2px;
+    }
+    .lead{
+      margin:0;
+      color:var(--muted);
+      max-width: 75ch;
+      font-size: 17px;
+    }
+
+    .content{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 10px 0 26px;
+    }
+    .article{
+      max-width: var(--max-article);
+    }
+
+    .block{
+      padding: 16px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .block h2{
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+    .block h3{
+      margin: 16px 0 8px;
+      font-size: 16px;
+    }
+    .block p{ margin: 0 0 10px; color: var(--muted); }
+    .block ul{ margin: 0 0 10px 18px; color: var(--muted); }
+    .block li{ margin: 6px 0; }
+
+    .callout{
+      border-color: rgba(212,175,55,.22);
+      background: rgba(212,175,55,.06);
+    }
+
+    .kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 13px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      display:inline-block;
+      margin: 2px 0;
+    }
+
+    pre{
+      margin: 10px 0 0;
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.30);
+      overflow:auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      color: var(--text);
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+
+    .toc{
+      max-width: var(--max-article);
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 14px 0 0;
+    }
+    .toc a{
+      color: var(--muted);
+      font-size: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      padding: 8px 10px;
+      border-radius: 14px;
+    }
+    .toc a:hover{
+      color: var(--text);
+      border-color: rgba(212,175,55,.28);
+      background: rgba(255,255,255,.035);
+    }
+
+    .next{
+      max-width: var(--max-article);
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    footer{
+      margin-top: 24px;
+      border-top:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+    }
+    .footer-wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 18px 26px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .footer-top{
+      display:flex; flex-wrap:wrap; gap:14px;
+      align-items:flex-start; justify-content:space-between;
+      margin-bottom:10px;
+    }
+    .footer-top a{ color:var(--text); opacity:.9; }
+    .footer-top a:hover{ opacity:1; }
+    .footer-bottom{ color:var(--muted); }
+
+    @media (max-width: 900px){
+      .menu{ display:none; }
+      .next{ grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <!-- Schema.org Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Jak pisać dobre prompty do ChatGPT — poradnik krok po kroku",
+    "description": "Prosty system pisania promptów do ChatGPT: rola, kontekst, cel i format. Gotowe szablony, przykłady i checklisty.",
+    "inLanguage": "pl-PL",
+    "author": { "@type": "Person", "name": "LUMENA Creative" },
+    "publisher": { "@type": "Organization", "name": "LUMENA Creative" }
+  }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/" aria-label="Strona główna">
+        <span class="dot" aria-hidden="true"></span>
+        <span>AI Poradnik</span>
+      </a>
+
+      <nav class="menu" aria-label="Nawigacja">
+        <a href="/">Start</a>
+        <a href="/#kategorie">Kategorie</a>
+        <a href="/#poradniki">Najnowsze</a>
+        <a href="/#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="article-hero">
+      <div class="badge">Podstawy • Prompty</div>
+      <h1>Jak pisać dobre prompty do ChatGPT — prosty system, który działa</h1>
+      <p class="lead">
+        Jeśli ChatGPT odpowiada „nijako”, prawie zawsze problemem jest prompt. Poniżej masz sprawdzony układ:
+        rola → kontekst → cel → format + kilka ograniczeń. To wystarczy, żeby wyniki były konkretne i powtarzalne.
+      </p>
+
+      <div class="meta">
+        <span>Poziom: początkujący</span>
+        <span>•</span>
+        <span>Czas: 6–10 min</span>
+        <span>•</span>
+        <span>Aktualizacja: 2025</span>
+      </div>
+
+      <nav class="toc" aria-label="Spis treści">
+        <a href="#system">System 6 elementów</a>
+        <a href="#szablon">Uniwersalny szablon</a>
+        <a href="#przyklady">3 przykłady</a>
+        <a href="#checklista">Checklista</a>
+      </nav>
+    </section>
+
+    <section class="content">
+      <article class="article">
+        <div id="system" class="block card">
+          <h2>1) System 6 elementów promptu</h2>
+          <p>Najprostszy prompt, który daje stabilne efekty, składa się z tych elementów:</p>
+          <ul>
+            <li><strong>Rola</strong> — kim ma być model (np. copywriter, analityk, rekruter)</li>
+            <li><strong>Kontekst</strong> — co jest ważne w sytuacji, dla kogo, jaki produkt/usługa</li>
+            <li><strong>Cel</strong> — co dokładnie ma powstać (konkretny rezultat)</li>
+            <li><strong>Format</strong> — jak ma wyglądać wynik (lista, tabela, kroki, JSON)</li>
+            <li><strong>Ograniczenia</strong> — długość, ton, zakazy, priorytety</li>
+            <li><strong>Sprawdzenie</strong> — prośba o doprecyzowanie braków lub weryfikację</li>
+          </ul>
+
+          <div class="block callout" style="margin-top:12px;">
+            <h3>Najczęstszy błąd</h3>
+            <p style="margin:0;">
+              Ludzie piszą <em>temat</em> zamiast <em>zadania</em>. „Napisz o marketingu” to temat.
+              „Napisz 7-punktową checklistę audytu landing page dla kursu online, z krótkim uzasadnieniem” to zadanie.
+            </p>
+          </div>
+        </div>
+
+        <div id="szablon" class="block card">
+          <h2>2) Uniwersalny szablon (kopiuj–wklej)</h2>
+          <p>Użyj tego układu i podstaw swoje dane:</p>
+
+          <pre><code>[ROLA]
+Jesteś: {rola}.
+
+[KONTEKST]
+Pracuję nad: {kontekst}.
+Odbiorca: {dla_kogo}.
+Ważne informacje: {punkty}.
+
+[CEL]
+Twoje zadanie: {konkretny_rezultat}.
+
+[FORMAT]
+Zwróć wynik jako: {format}.
+Długość: {limity}.
+
+[OGRANICZENIA]
+Ton: {np. profesjonalny, zwięzły}.
+Nie używaj: {czego_unikać}.
+Priorytet: {co_najważniejsze}.
+
+[SPRAWDZENIE]
+Jeśli czegoś brakuje — zadaj do 3 pytań doprecyzowujących zanim odpowiesz.</code></pre>
+
+          <p style="margin-top:10px;">
+            Tip: jeśli chcesz „lepszej jakości”, dodaj <span class="kbd">podaj 2–3 warianty</span> oraz
+            <span class="kbd">wyjaśnij krótko, dlaczego</span>.
+          </p>
+        </div>
+
+        <div id="przyklady" class="block card">
+          <h2>3) Trzy przykłady promptów (realne zastosowania)</h2>
+
+          <h3>A) Oferta na Useme (freelancer)</h3>
+          <pre><code>Jesteś doświadczonym freelancerem (web/landing page).
+Kontekst: klient chce prostą stronę-wizytówkę dla studia masażu, budżet 1200–1800 zł, czas 7 dni.
+Cel: napisz ofertę (max 1200 znaków) z wyjaśnieniem procesu i 3 pakietami.
+Format: nagłówek + krótki opis + 3 pakiety w punktach + pytanie na koniec.
+Ton: profesjonalny, konkretny. Bez marketingowego nadęcia.
+Jeśli brakuje danych, zadaj do 3 pytań.</code></pre>
+
+          <h3>B) Streszczenie i plan działania</h3>
+          <pre><code>Jesteś analitykiem.
+Kontekst: wklejam tekst artykułu poniżej.
+Cel: wypisz 7 kluczowych wniosków i 5 działań do wdrożenia.
+Format: dwie sekcje (Wnioski / Działania), krótkie punkty.
+Ograniczenia: bez cytatów, bez lania wody.
+Jeśli tekst jest niejasny, wskaż co jest niepewne.</code></pre>
+
+          <h3>C) Mail do klienta</h3>
+          <pre><code>Jesteś account managerem.
+Kontekst: klient opóźnia dostarczenie materiałów, przez co termin projektu się przesuwa.
+Cel: napisz uprzejmego maila z jasnym call-to-action i nową propozycją terminu.
+Format: temat maila + treść (max 120 słów).
+Ton: spokojny, profesjonalny, bez presji.</code></pre>
+        </div>
+
+        <div id="checklista" class="block card">
+          <h2>4) Checklista jakości promptu</h2>
+          <ul>
+            <li>Czy model wie, <strong>kim jest</strong> (rola)?</li>
+            <li>Czy podałeś <strong>kontekst</strong> i odbiorcę?</li>
+            <li>Czy cel jest mierzalny (co ma powstać)?</li>
+            <li>Czy określiłeś <strong>format</strong> odpowiedzi?</li>
+            <li>Czy dodałeś ograniczenia (ton, długość, zakazy)?</li>
+            <li>Czy dodałeś prośbę o doprecyzowanie braków?</li>
+          </ul>
+
+          <div class="block callout" style="margin-top:12px;">
+            <h3>Co dalej?</h3>
+            <p style="margin:0;">
+              W kolejnym poradniku dodamy „prompt do promptów”: model zada Ci pytania i sam zbuduje finalny prompt.
+            </p>
+          </div>
+        </div>
+
+        <div class="next">
+          <a class="block" href="/poradniki/chatgpt-do-ofert-useme.html">
+            <div style="color:#f6e6b3; font-size:12px; text-transform:uppercase; letter-spacing:.8px;">Następny</div>
+            <h3 style="margin:6px 0 6px;">ChatGPT do ofert na Useme</h3>
+            <p style="margin:0; color:var(--muted); font-size:14px;">Szablony, warianty, gotowe formuły pod różne branże.</p>
+          </a>
+
+          <a class="block" href="/#poradniki">
+            <div style="color:#f6e6b3; font-size:12px; text-transform:uppercase; letter-spacing:.8px;">Wróć</div>
+            <h3 style="margin:6px 0 6px;">Zobacz więcej poradników</h3>
+            <p style="margin:0; color:var(--muted); font-size:14px;">Index + lista artykułów (zrobimy w kroku 2).</p>
+          </a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Twoja stopka (w tym samym stylu co index) -->
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-top">
+        <div>
+          <div style="font-weight:700; color:var(--text); letter-spacing:.6px;">LUMENA Creative</div>
+          <div style="margin-top:6px;">Tworzę strony, które przyciągają uwagę i budzą emocje.</div>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="/">Start</a>
+          <a href="/#kategorie">Kategorie</a>
+          <a href="/#poradniki">Poradniki</a>
+          <a href="/#kontakt">Kontakt</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2025 LUMENA Creative<br />
+        Wszystkie prawa zastrzeżone.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

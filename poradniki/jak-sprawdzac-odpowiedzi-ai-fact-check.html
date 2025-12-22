@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jak sprawdzać odpowiedzi AI — fact-check krok po kroku</title>
+  <meta name="description" content="Procedura weryfikacji odpowiedzi AI: czerwone flagi, pytania kontrolne, stopień pewności, lista twierdzeń do sprawdzenia i prompt do audytu." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="/poradniki/jak-sprawdzac-odpowiedzi-ai-fact-check.html" />
+
+  <!-- OG + Twitter + theme-color (dodane) -->
+  <meta name="theme-color" content="#0b0b0d" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:site_name" content="AI Poradnik — LUMENA Creative" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:title" content="Jak sprawdzać odpowiedzi AI — fact-check krok po kroku" />
+  <meta property="og:description" content="Procedura weryfikacji odpowiedzi AI: czerwone flagi, pytania kontrolne, stopień pewności, lista twierdzeń do sprawdzenia i prompt do audytu." />
+  <meta property="og:url" content="https://lumena-creative.netlify.app/poradniki/jak-sprawdzac-odpowiedzi-ai-fact-check.html" />
+  <meta property="og:image" content="https://lumena-creative.netlify.app/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jak sprawdzać odpowiedzi AI — fact-check krok po kroku" />
+  <meta name="twitter:description" content="Procedura weryfikacji odpowiedzi AI: czerwone flagi, pytania kontrolne, stopień pewności, lista twierdzeń do sprawdzenia i prompt do audytu." />
+  <meta name="twitter:image" content="https://lumena-creative.netlify.app/og.jpg" />
+
+  <style>
+    :root{--bg:#0b0b0d;--text:#f3f3f5;--muted:#b8b8c3;--gold:#d4af37;--gold-2:#b9912a;--line:rgba(255,255,255,.08);--shadow:0 18px 55px rgba(0,0,0,.55);--radius:18px;--max:1100px;--max-article:820px}
+    *{box-sizing:border-box} body{margin:0;background:radial-gradient(900px 450px at 20% 10%, rgba(212,175,55,.10), transparent 60%),radial-gradient(700px 420px at 80% 25%, rgba(212,175,55,.07), transparent 55%),var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:inherit;text-decoration:none} .wrap{max-width:var(--max);margin:0 auto;padding:26px 18px}
+    header{position:sticky;top:0;z-index:40;backdrop-filter:blur(10px);background:linear-gradient(to bottom, rgba(11,11,13,.8), rgba(11,11,13,.35));border-bottom:1px solid var(--line)}
+    .nav{max-width:var(--max);margin:0 auto;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.6px}
+    .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-2));box-shadow:0 0 18px rgba(212,175,55,.35)}
+    .menu{display:flex;gap:14px;font-size:14px;color:var(--muted)} .menu a{padding:8px 10px;border-radius:12px}
+    .menu a:hover{color:var(--text);background:rgba(255,255,255,.04)}
+    .card{border-radius:var(--radius);background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid var(--line);box-shadow:var(--shadow)}
+    .badge{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;border-radius:999px;background:rgba(212,175,55,.10);border:1px solid rgba(212,175,55,.22);color:#f6e6b3;font-size:13px;margin-bottom:14px}
+    h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.15}
+    .lead{margin:0;color:var(--muted);max-width:82ch;font-size:17px}
+    .article{max-width:var(--max-article)}
+    .block{margin-top:12px;padding:16px;border-radius:var(--radius);border:1px solid var(--line);background:rgba(255,255,255,.02)}
+    .block h2{margin:0 0 8px;font-size:20px} .block h3{margin:16px 0 8px;font-size:16px}
+    .block p,.block li{color:var(--muted)} ul{margin:0 0 10px 18px}
+    .callout{border-color:rgba(212,175,55,.22);background:rgba(212,175,55,.06)}
+    pre{margin-top:10px;padding:14px;border-radius:16px;border:1px solid var(--line);background:rgba(0,0,0,.3);font-size:13.5px;white-space:pre-wrap}
+    table{width:100%;border-collapse:separate;border-spacing:0;margin-top:10px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+    th,td{padding:12px;border-bottom:1px solid var(--line);color:var(--muted);font-size:14px;vertical-align:top;text-align:left}
+    th{color:var(--text);background:rgba(255,255,255,.03)} tr:last-child td{border-bottom:none}
+    .next{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    footer{margin-top:26px;border-top:1px solid var(--line);background:rgba(0,0,0,.18)}
+    .footer-wrap{max-width:var(--max);margin:0 auto;padding:18px;color:var(--muted);font-size:14px}
+    @media(max-width:900px){.menu{display:none}.next{grid-template-columns:1fr}}
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Jak sprawdzać odpowiedzi AI — fact-check krok po kroku","description":"Procedura weryfikacji odpowiedzi AI: czerwone flagi, pytania kontrolne, stopień pewności i prompt do audytu.","inLanguage":"pl-PL","author":{"@type":"Person","name":"LUMENA Creative"},"publisher":{"@type":"Organization","name":"LUMENA Creative"}}
+  </script>
+</head>
+
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="/"><span class="dot"></span>AI Poradnik</a>
+    <nav class="menu"><a href="/">Start</a><a href="/#poradniki">Poradniki</a><a href="/#kontakt">Kontakt</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <div class="badge">Weryfikacja • Fakty • Jakość</div>
+    <h1>Jak sprawdzać odpowiedzi AI — fact-check krok po kroku</h1>
+    <p class="lead">
+      Największy błąd to traktowanie odpowiedzi AI jak źródła. AI to narzędzie do syntezy i szkicu,
+      a weryfikacja to osobny etap. Poniżej masz prostą procedurę, która minimalizuje ryzyko.
+    </p>
+  </section>
+
+  <article class="article">
+
+    <div class="block card">
+      <h2>1) Czerwone flagi (kiedy zapala się lampka)</h2>
+      <ul>
+        <li>konkretne daty/liczby bez kontekstu lub źródła</li>
+        <li>pewny ton przy złożonym temacie</li>
+        <li>nazwy instytucji/dokumentów, których nie kojarzysz</li>
+        <li>sprzeczności między akapitami</li>
+        <li>zbyt „ładna” narracja bez szczegółów</li>
+      </ul>
+    </div>
+
+    <div class="block card">
+      <h2>2) Szybka metoda: rozbij odpowiedź na twierdzenia</h2>
+      <pre><code>Rozbij poniższą odpowiedź na listę twierdzeń do weryfikacji.
+Format:
+- Twierdzenie
+- Jak to sprawdzić (jakie źródło / jaki dokument)
+- Priorytet: wysoki/średni/niski
+
+ODPOWIEDŹ:
+{wklej}</code></pre>
+    </div>
+
+    <div class="block card">
+      <h2>3) Model „pewności” (prosty i praktyczny)</h2>
+      <table>
+        <thead><tr><th>Poziom</th><th>Co to znaczy</th><th>Co robisz</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Wysoki</strong></td><td>ogólne zasady, logika, brak ryzykownych detali</td><td>używasz jako szkicu</td></tr>
+          <tr><td><strong>Średni</strong></td><td>wymaga doprecyzowania parametrów lub kontekstu</td><td>dopytujesz / uściślasz</td></tr>
+          <tr><td><strong>Niski</strong></td><td>twarde dane, nazwy, daty bez źródeł</td><td>weryfikujesz w źródłach albo odrzucasz</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="block card">
+      <h2>4) Prompt do audytu jakości (druga para oczu)</h2>
+      <pre><code>Zrób audyt jakości poniższej odpowiedzi.
+Zasady:
+- wskaż miejsca, które mogą być błędne lub niepełne
+- wskaż, co brzmi jak fakt bez pokrycia
+- zaproponuj 5 pytań kontrolnych
+- podaj wersję poprawioną z oznaczeniem niepewności
+
+ODPOWIEDŹ:
+{wklej}</code></pre>
+    </div>
+
+    <div class="block card">
+      <h2>5) Minimalny fact-check (5 minut)</h2>
+      <ul>
+        <li>sprawdź 3 najważniejsze twierdzenia w 2 niezależnych źródłach</li>
+        <li>sprawdź definicje / terminy w źródle pierwotnym</li>
+        <li>jeśli to prawo/finanse/medycyna — weryfikuj w dokumentach oficjalnych</li>
+      </ul>
+
+      <div class="block callout">
+        <p>Jeśli publikujesz treść: lepiej wypisać „do sprawdzenia” niż udawać pewność.</p>
+      </div>
+    </div>
+
+    <div class="block" aria-label="Reklama">
+      <div style="color:var(--muted); font-size:13px;">[Miejsce na reklamę — np. AdSense]</div>
+    </div>
+
+    <div class="next">
+      <a class="block card" href="/poradniki/chatgpt-do-maili-biznesowych.html"><strong>Poprzedni:</strong><br/>Maile biznesowe</a>
+      <a class="block card" href="/poradniki/najczestsze-bledy-poczatkujacych-ai.html"><strong>Następny:</strong><br/>Błędy początkujących</a>
+    </div>
+
+  </article>
+</main>
+
+<footer><div class="footer-wrap">© 2025 LUMENA Creative — wszystkie prawa zastrzeżone.</div></footer>
+</body>
+</html>

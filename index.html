@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Poradnik — LUMENA Creative</title>
+  <meta name="description" content="Praktyczny poradnik AI: ChatGPT, prompty, automatyzacje i narzędzia. Zrozumiale, konkretnie, krok po kroku." />
+
+  <!-- OG + Twitter + theme-color (dodane) -->
+  <meta name="theme-color" content="#0b0b0d" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:site_name" content="AI Poradnik — LUMENA Creative" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:title" content="AI Poradnik — LUMENA Creative" />
+  <meta property="og:description" content="Praktyczny poradnik AI: ChatGPT, prompty, automatyzacje i narzędzia. Zrozumiale, konkretnie, krok po kroku." />
+  <meta property="og:url" content="https://lumena-creative.netlify.app/" />
+  <meta property="og:image" content="https://lumena-creative.netlify.app/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Poradnik — LUMENA Creative" />
+  <meta name="twitter:description" content="Praktyczny poradnik AI: ChatGPT, prompty, automatyzacje i narzędzia. Zrozumiale, konkretnie, krok po kroku." />
+  <meta name="twitter:image" content="https://lumena-creative.netlify.app/og.jpg" />
+
+  <!-- VICON / favicon: podmień ścieżkę na swój plik -->
+  <link rel="icon" href="/vicon.ico" />
+
+  <style>
+    :root{
+      --bg:#0b0b0d;
+      --panel:#121217;
+      --text:#f3f3f5;
+      --muted:#b8b8c3;
+      --gold:#d4af37;
+      --gold-2:#b9912a;
+      --line:rgba(255,255,255,.08);
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
+      --radius:18px;
+      --max:1100px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      background:
+        radial-gradient(900px 450px at 20% 10%, rgba(212,175,55,.10), transparent 60%),
+        radial-gradient(700px 420px at 80% 25%, rgba(212,175,55,.07), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      letter-spacing:.2px;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:26px 18px; }
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:40;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,11,13,.80), rgba(11,11,13,.35));
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      max-width:var(--max); margin:0 auto; padding:14px 18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700; letter-spacing:.6px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      box-shadow: 0 0 18px rgba(212,175,55,.35);
+    }
+    .menu{
+      display:flex; gap:14px; align-items:center;
+      font-size:14px; color:var(--muted);
+    }
+    .menu a{
+      padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+    }
+    .menu a:hover{
+      color:var(--text);
+      border-color: var(--line);
+      background: rgba(255,255,255,.03);
+    }
+
+    /* Hero */
+    .hero{ padding:44px 0 12px; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .hero h1{
+      margin:0 0 10px;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height:1.12;
+      letter-spacing:.2px;
+    }
+    .hero p{ margin:0 0 18px; color:var(--muted); max-width:62ch; }
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:7px 12px; border-radius:999px;
+      background: rgba(212,175,55,.10);
+      border: 1px solid rgba(212,175,55,.22);
+      color: #f6e6b3;
+      font-size:13px;
+      margin-bottom:14px;
+    }
+    .cta-row{ display:flex; gap:10px; flex-wrap:wrap; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-weight:600;
+      box-shadow: none;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(212,175,55,.28); background: rgba(255,255,255,.045); }
+    .btn.primary{
+      border-color: rgba(212,175,55,.38);
+      background: linear-gradient(135deg, rgba(212,175,55,.18), rgba(255,255,255,.03));
+    }
+    .card{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .hero-side{
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .stat{
+      display:grid; grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .pill{
+      padding:12px 12px;
+      border-radius: 16px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+    }
+    .pill strong{ display:block; font-size:14px; }
+    .pill span{ color:var(--muted); font-size:13px; }
+
+    /* Sections */
+    section{ padding:18px 0; }
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      margin: 18px 0 10px;
+    }
+    .section-title h2{ margin:0; font-size:20px; letter-spacing:.2px; }
+    .section-title a{ color:var(--muted); font-size:14px; }
+    .section-title a:hover{ color:var(--text); }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .item{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+      min-height: 130px;
+    }
+    .item:hover{
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,.28);
+      background: rgba(255,255,255,.035);
+    }
+    .kicker{
+      color:#f6e6b3;
+      font-size:12px;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      margin-bottom:6px;
+    }
+    .item h3{ margin:0 0 8px; font-size:16px; }
+    .item p{ margin:0; color:var(--muted); font-size:14px; }
+
+    .two-col{
+      display:grid; grid-template-columns: 1fr 1fr; gap:12px;
+    }
+
+    /* Footer */
+    footer{
+      margin-top: 24px;
+      border-top:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+    }
+    .footer-wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 18px 26px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .footer-top{
+      display:flex; flex-wrap:wrap; gap:14px;
+      align-items:flex-start; justify-content:space-between;
+      margin-bottom:10px;
+    }
+    .footer-top a{ color:var(--text); opacity:.9; }
+    .footer-top a:hover{ opacity:1; }
+    .footer-bottom{ color:var(--muted); }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: 1fr; }
+      .two-col{ grid-template-columns: 1fr; }
+      .menu{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="#top" aria-label="Strona główna">
+        <span class="dot" aria-hidden="true"></span>
+        <span>AI Poradnik</span>
+      </a>
+
+      <nav class="menu" aria-label="Nawigacja">
+        <a href="#kategorie">Kategorie</a>
+        <a href="#start">Zacznij tutaj</a>
+        <a href="#poradniki">Najnowsze</a>
+        <a href="/poradniki/">Poradniki</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="badge">Praktycznie • bez lania wody • do wdrożenia od razu</div>
+          <h1>ChatGPT i AI w praktyce — poradniki, prompty i workflow dla pracy i nauki</h1>
+          <p>
+            Budujemy bibliotekę krótkich, konkretnych instrukcji: jak pisać prompty, jak automatyzować zadania,
+            jak wybierać narzędzia AI i jak unikać typowych błędów.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn primary" href="#start">Zacznij od podstaw</a>
+            <a class="btn" href="#poradniki">Zobacz poradniki</a>
+            <a class="btn" href="/poradniki/">Wszystkie poradniki</a>
+          </div>
+        </div>
+
+        <aside class="card hero-side" aria-label="Skrót na start">
+          <div>
+            <div class="kicker">Szybki start</div>
+            <div class="stat">
+              <div class="pill">
+                <strong>Prompty</strong>
+                <span>gotowe szablony</span>
+              </div>
+              <div class="pill">
+                <strong>Workflow</strong>
+                <span>praca krok po kroku</span>
+              </div>
+              <div class="pill">
+                <strong>Narzędzia</strong>
+                <span>dobór i porównania</span>
+              </div>
+              <div class="pill">
+                <strong>Błędy</strong>
+                <span>jak ich unikać</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pill">
+            <strong>Cel strony</strong>
+            <span>poradnik ogólnodostępny, monetyzacja reklamami + sekcja narzędzi (pod afiliację)</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="kategorie">
+      <div class="section-title">
+        <h2>Kategorie</h2>
+        <a href="/poradniki/">Przejdź do wszystkich poradników →</a>
+      </div>
+
+      <div class="grid" role="list">
+        <a class="item" role="listitem" href="/poradniki/" aria-label="Prompty i szablony">
+          <div class="kicker">Kategoria</div>
+          <h3>Prompty i szablony</h3>
+          <p>Gotowe formuły do maili, ofert, CV, nauki, planowania i contentu.</p>
+        </a>
+
+        <a class="item" role="listitem" href="/poradniki/" aria-label="ChatGPT w pracy">
+          <div class="kicker">Kategoria</div>
+          <h3>ChatGPT w pracy</h3>
+          <p>Administracja, sprzedaż, HR, freelancer — praktyczne zastosowania.</p>
+        </a>
+
+        <a class="item" role="listitem" href="/poradniki/" aria-label="Narzędzia AI">
+          <div class="kicker">Kategoria</div>
+          <h3>Narzędzia AI</h3>
+          <p>Rankingi, porównania, stack narzędzi. Tu dodamy linki partnerskie.</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="start">
+      <div class="section-title">
+        <h2>Zacznij tutaj</h2>
+        <a href="#kontakt">Masz temat do poradnika? →</a>
+      </div>
+
+      <div class="two-col">
+        <a class="item" href="/poradniki/jak-pisac-dobre-prompty-chatgpt.html" aria-label="Jak pisać dobre prompty">
+          <div class="kicker">Podstawy</div>
+          <h3>Jak pisać dobre prompty (system + przykłady)</h3>
+          <p>Rola + kontekst + format. Gotowy szablon i praktyczne przykłady.</p>
+        </a>
+
+        <a class="item" href="/poradniki/czego-nie-wrzucac-do-ai-dane-wrazliwe.html" aria-label="Czego nie wrzucać do AI">
+          <div class="kicker">Bezpieczeństwo</div>
+          <h3>Czego nie wrzucać do AI</h3>
+          <p>Dane wrażliwe, klienci, NDA — proste reguły, anonimizacja i checklista.</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="poradniki">
+      <div class="section-title">
+        <h2>Najnowsze poradniki</h2>
+        <a href="/poradniki/">Zobacz wszystkie →</a>
+      </div>
+
+      <div class="grid" role="list">
+        <a class="item" role="listitem" href="/poradniki/chatgpt-do-ofert-useme.html">
+          <div class="kicker">Poradnik</div>
+          <h3>ChatGPT do ofert na Useme</h3>
+          <p>Szablon promptu + warianty pod branże. Do wdrożenia od razu.</p>
+        </a>
+
+        <a class="item" role="listitem" href="/poradniki/prompty-do-researchu-i-streszczen-bez-halucynacji.html">
+          <div class="kicker">Poradnik</div>
+          <h3>Prompty do researchu i streszczeń</h3>
+          <p>Jak uzyskać uporządkowane wnioski, stopnie pewności i plan działań.</p>
+        </a>
+
+        <a class="item" role="listitem" href="/poradniki/chatgpt-do-maili-biznesowych.html">
+          <div class="kicker">Poradnik</div>
+          <h3>ChatGPT do maili biznesowych</h3>
+          <p>Follow-up, wycena, opóźnienie, reklamacja — gotowe prompty PL/EN.</p>
+        </a><a class="item" role="listitem" href="/poradniki/chatgpt-plus-czy-warto.html">
+  <div class="kicker">Poradnik</div>
+  <h3>ChatGPT Plus – czy warto wykupić?</h3>
+  <p>Różnice między darmową a płatną wersją oraz realne korzyści.</p>
+</a>
+
+<a class="item" role="listitem" href="/poradniki/chatgpt-plus-jak-kupic-anulowac.html">
+  <div class="kicker">Poradnik</div>
+  <h3>ChatGPT Plus – jak kupić i anulować</h3>
+  <p>Instrukcja krok po kroku i najczęstsze problemy.</p>
+</a>
+
+<a class="item" role="listitem" href="/poradniki/porownanie-narzedzi-ai-chatgpt-deepseek.html">
+  <div class="kicker">Poradnik</div>
+  <h3>Porównanie AI: ChatGPT vs DeepSeek</h3>
+  <p>Które narzędzie wybrać do kodu, analizy i treści.</p>
+</a>
+
+<a class="item" role="listitem" href="/poradniki/alternatywy-dla-chatgpt.html">
+  <div class="kicker">Poradnik</div>
+  <h3>Alternatywy dla ChatGPT</h3>
+  <p>Kiedy inne narzędzia AI dają lepsze efekty.</p>
+</a>
+
+<a class="item" role="listitem" href="/poradniki/ai-do-kodu-i-analizy-jak-wybrac.html">
+  <div class="kicker">Poradnik</div>
+  <h3>AI do kodu i analizy – jak wybrać</h3>
+  <p>Kryteria, testy porównawcze i workflow techniczny.</p>
+</a>
+
+<a class="item" role="listitem" href="/poradniki/chatgpt-vs-inne-ai-tabela-porownawcza.html">
+  <div class="kicker">Poradnik</div>
+  <h3>ChatGPT vs inne AI – tabela porównawcza</h3>
+  <p>Szybkie porównanie narzędzi pod konkretne zadania.</p>
+</a>
+
+<a class="item" role="listitem" href="/poradniki/prompty-do-porownywania-modeli-ai.html">
+  <div class="kicker">Poradnik</div>
+  <h3>Prompty do porównywania modeli AI</h3>
+  <p>Powtarzalne testy jakości, logiki i stylu.</p>
+</a>
+
+<a class="item" role="listitem" href="/poradniki/halucynacje-w-ai-jak-ograniczac.html">
+  <div class="kicker">Poradnik</div>
+  <h3>Halucynacje w AI – jak je ograniczać</h3>
+  <p>Sygnały ostrzegawcze i procedura weryfikacji.</p>
+</a>
+
+<a class="item" role="listitem" href="/poradniki/jak-uczyc-chatgpt-stylu-marki-brand-voice.html">
+  <div class="kicker">Poradnik</div>
+  <h3>Jak uczyć ChatGPT stylu marki (brand voice)</h3>
+  <p>Brief, master prompt i walidacja spójności.</p>
+</a>
+
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="section-title">
+        <h2>Kontakt</h2>
+        <span style="color:var(--muted); font-size:14px;">Propozycje tematów / współprace</span>
+      </div>
+
+      <div class="item">
+        <p style="margin:0 0 8px; color:var(--muted);">Napisz:</p>
+        <p style="margin:0; font-size:16px;">
+          <a href="mailto:kontakt.lumena.studio@gmail.com">kontakt.lumena.studio@gmail.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Twoja stopka (z Twojej strony) -->
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-top">
+        <div>
+          <div style="font-weight:700; color:var(--text); letter-spacing:.6px;">LUMENA Creative</div>
+          <div style="margin-top:6px;">Tworzę strony, które przyciągają uwagę i budzą emocje.</div>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="#top">Góra</a>
+          <a href="#kategorie">Kategorie</a>
+          <a href="#poradniki">Poradniki</a>
+          <a href="/poradniki/">Wszystkie</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2025 LUMENA Creative<br />
+        Wszystkie prawa zastrzeżone.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

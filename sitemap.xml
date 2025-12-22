@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://lumena-creative.netlify.app/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://lumena-creative.netlify.app/poradniki/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Poradniki -->
+  <url>
+    <loc>https://lumena-creative.netlify.app/poradniki/jak-pisac-dobre-prompty-chatgpt.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lumena-creative.netlify.app/poradniki/chatgpt-do-ofert-useme.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lumena-creative.netlify.app/poradniki/prompty-do-researchu-i-streszczen-bez-halucynacji.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lumena-creative.netlify.app/poradniki/polski-vs-angielski-prompt-kiedy-i-jak.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lumena-creative.netlify.app/poradniki/czego-nie-wrzucac-do-ai-dane-wrazliwe.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lumena-creative.netlify.app/poradniki/prompt-do-promptow-generator-idealnego-promptu.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lumena-creative.netlify.app/poradniki/chatgpt-do-cv-i-listow-motywacyjnych.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lumena-creative.netlify.app/poradniki/chatgpt-do-maili-biznesowych.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lumena-creative.netlify.app/poradniki/jak-sprawdzac-odpowiedzi-ai-fact-check.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lumena-creative.netlify.app/poradniki/najczestsze-bledy-poczatkujacych-ai.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

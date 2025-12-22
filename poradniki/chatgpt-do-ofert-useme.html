@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ChatGPT do ofert na Useme — gotowe prompty i schemat odpowiedzi</title>
+  <meta name="description" content="Jak pisać skuteczne oferty na Useme z pomocą ChatGPT: struktura, prompty, warianty pod branże i szybkie poprawki jakości." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="/poradniki/chatgpt-do-ofert-useme.html" />
+
+  <!-- OG + Twitter + theme-color (dodane) -->
+  <meta name="theme-color" content="#0b0b0d" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:site_name" content="AI Poradnik — LUMENA Creative" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:title" content="ChatGPT do ofert na Useme — gotowe prompty i schemat odpowiedzi" />
+  <meta property="og:description" content="Jak pisać skuteczne oferty na Useme z pomocą ChatGPT: struktura, prompty, warianty pod branże i szybkie poprawki jakości." />
+  <meta property="og:url" content="https://lumena-creative.netlify.app/poradniki/chatgpt-do-ofert-useme.html" />
+  <meta property="og:image" content="https://lumena-creative.netlify.app/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ChatGPT do ofert na Useme — gotowe prompty i schemat odpowiedzi" />
+  <meta name="twitter:description" content="Jak pisać skuteczne oferty na Useme z pomocą ChatGPT: struktura, prompty, warianty pod branże i szybkie poprawki jakości." />
+  <meta name="twitter:image" content="https://lumena-creative.netlify.app/og.jpg" />
+
+  <style>
+    :root{
+      --bg:#0b0b0d;
+      --panel:#121217;
+      --text:#f3f3f5;
+      --muted:#b8b8c3;
+      --gold:#d4af37;
+      --gold-2:#b9912a;
+      --line:rgba(255,255,255,.08);
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
+      --radius:18px;
+      --max:1100px;
+      --max-article: 820px;
+    }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      background:
+        radial-gradient(900px 450px at 20% 10%, rgba(212,175,55,.10), transparent 60%),
+        radial-gradient(700px 420px at 80% 25%, rgba(212,175,55,.07), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      font: 16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      letter-spacing:.2px;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:26px 18px; }
+
+    header{
+      position:sticky; top:0; z-index:40;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,11,13,.80), rgba(11,11,13,.35));
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      max-width:var(--max); margin:0 auto; padding:14px 18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700; letter-spacing:.6px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      box-shadow: 0 0 18px rgba(212,175,55,.35);
+    }
+    .menu{
+      display:flex; gap:14px; align-items:center;
+      font-size:14px; color:var(--muted);
+    }
+    .menu a{
+      padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+    }
+    .menu a:hover{
+      color:var(--text);
+      border-color: var(--line);
+      background: rgba(255,255,255,.03);
+    }
+
+    .card{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .article-hero{ padding: 32px 0 12px; }
+    .article-hero .meta{
+      color: var(--muted);
+      font-size: 14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin: 10px 0 0;
+    }
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:7px 12px; border-radius:999px;
+      background: rgba(212,175,55,.10);
+      border: 1px solid rgba(212,175,55,.22);
+      color: #f6e6b3;
+      font-size:13px;
+      margin-bottom:14px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height:1.14;
+      letter-spacing:.2px;
+    }
+    .lead{
+      margin:0;
+      color:var(--muted);
+      max-width: 78ch;
+      font-size: 17px;
+    }
+
+    .content{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 10px 0 26px;
+    }
+    .article{ max-width: var(--max-article); }
+
+    .block{
+      padding: 16px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .block h2{ margin: 0 0 8px; font-size: 20px; }
+    .block h3{ margin: 16px 0 8px; font-size: 16px; }
+    .block p{ margin: 0 0 10px; color: var(--muted); }
+    .block ul{ margin: 0 0 10px 18px; color: var(--muted); }
+    .block li{ margin: 6px 0; }
+
+    .callout{
+      border-color: rgba(212,175,55,.22);
+      background: rgba(212,175,55,.06);
+    }
+
+    .kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 13px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      display:inline-block;
+      margin: 2px 0;
+    }
+
+    pre{
+      margin: 10px 0 0;
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.30);
+      overflow:auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      color: var(--text);
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+
+    .toc{
+      max-width: var(--max-article);
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 14px 0 0;
+    }
+    .toc a{
+      color: var(--muted);
+      font-size: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      padding: 8px 10px;
+      border-radius: 14px;
+    }
+    .toc a:hover{
+      color: var(--text);
+      border-color: rgba(212,175,55,.28);
+      background: rgba(255,255,255,.035);
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .next{
+      max-width: var(--max-article);
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    footer{
+      margin-top: 24px;
+      border-top:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+    }
+    .footer-wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 18px 26px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .footer-top{
+      display:flex; flex-wrap:wrap; gap:14px;
+      align-items:flex-start; justify-content:space-between;
+      margin-bottom:10px;
+    }
+    .footer-top a{ color:var(--text); opacity:.9; }
+    .footer-top a:hover{ opacity:1; }
+    .footer-bottom{ color:var(--muted); }
+
+    @media (max-width: 900px){
+      .menu{ display:none; }
+      .grid2{ grid-template-columns: 1fr; }
+      .next{ grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <!-- Schema.org Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ChatGPT do ofert na Useme — gotowe prompty i schemat odpowiedzi",
+    "description": "Jak pisać skuteczne oferty na Useme z pomocą ChatGPT: struktura, prompty, warianty pod branże i szybkie poprawki jakości.",
+    "inLanguage": "pl-PL",
+    "author": { "@type": "Person", "name": "LUMENA Creative" },
+    "publisher": { "@type": "Organization", "name": "LUMENA Creative" }
+  }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/" aria-label="Strona główna">
+        <span class="dot" aria-hidden="true"></span>
+        <span>AI Poradnik</span>
+      </a>
+
+      <nav class="menu" aria-label="Nawigacja">
+        <a href="/">Start</a>
+        <a href="/#kategorie">Kategorie</a>
+        <a href="/#poradniki">Najnowsze</a>
+        <a href="/#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="article-hero">
+      <div class="badge">Freelancing • Useme • Prompty</div>
+      <h1>ChatGPT do ofert na Useme — schemat, który zwiększa odpowiedzi</h1>
+      <p class="lead">
+        Dobra oferta na Useme to nie „ładne słowa”, tylko szybkie zbudowanie zaufania: zrozumienie problemu,
+        plan działania, konkretne deliverables i jedno pytanie na koniec. Poniżej masz gotowy system oraz prompty,
+        które wygenerują ofertę w Twoim stylu — bez brzmienia jak AI.
+      </p>
+
+      <div class="meta">
+        <span>Poziom: początkujący / średni</span>
+        <span>•</span>
+        <span>Czas: 8–12 min</span>
+        <span>•</span>
+        <span>Aktualizacja: 2025</span>
+      </div>
+
+      <nav class="toc" aria-label="Spis treści">
+        <a href="#struktura">Struktura oferty</a>
+        <a href="#prompt">Główny prompt</a>
+        <a href="#warianty">Warianty pod branże</a>
+        <a href="#polerka">Polerka i „anti-AI”</a>
+      </nav>
+    </section>
+
+    <section class="content">
+      <article class="article">
+
+        <div id="struktura" class="block card">
+          <h2>1) Struktura oferty, która działa</h2>
+          <p>Trzymaj się krótkiego układu (to najważniejsze):</p>
+          <ul>
+            <li><strong>1 zdanie: rozumiem problem</strong> (parafraza z ogłoszenia)</li>
+            <li><strong>Plan w 3–5 krokach</strong> (proces, bez lania wody)</li>
+            <li><strong>Deliverables</strong> (co klient dostaje na końcu)</li>
+            <li><strong>Warianty / pakiety</strong> (opcjonalnie)</li>
+            <li><strong>Jedno pytanie</strong> (żeby klient odpisał)</li>
+          </ul>
+
+          <div class="block callout" style="margin-top:12px;">
+            <h3>Pro tip (krótko, ale mocno)</h3>
+            <p style="margin:0;">
+              Klient nie kupuje „strony” — kupuje <strong>efekt</strong>. Wpleć 1 zdanie o rezultacie:
+              „strona ma zbierać zapytania”, „ma ułatwić rezerwacje”, „ma wyglądać premium i budować zaufanie”.
+            </p>
+          </div>
+        </div>
+
+        <div id="prompt" class="block card">
+          <h2>2) Główny prompt do generowania oferty</h2>
+          <p>
+            Ten prompt jest tak skonstruowany, żeby oferta była <strong>konkretna</strong> i w Twoim stylu.
+            Wklejasz ogłoszenie i dopisujesz 2–3 swoje informacje.
+          </p>
+
+          <pre><code>Jesteś doświadczonym freelancerem. Pisz po polsku, profesjonalnie i konkretnie.
+Cel: przygotuj ofertę na Useme, max 1200–1500 znaków.
+
+OGŁOSZENIE (wklejam):
+{wklej_treść_ogłoszenia}
+
+MÓJ PROFIL / KONTEKST:
+- Specjalizacja: {np. strony www, landing page, UI}
+- Czas realizacji: {np. 5–7 dni}
+- Technologie / podejście: {np. HTML/CSS/JS, Webflow, WordPress, SEO podstawowe}
+- Co wyróżnia mnie: {np. szybka komunikacja, estetyka premium, optymalizacja}
+
+WYMAGANIA ODPowiedzi:
+1) Zaczynasz od 1 zdania: parafraza potrzeb klienta (bez kopiowania).
+2) Dajesz plan w 4 krokach.
+3) Wypisujesz deliverables w punktach (co klient dostaje).
+4) Dodajesz 1 zdanie o rezultacie biznesowym.
+5) Kończysz jednym pytaniem doprecyzowującym.
+
+Ograniczenia:
+- Zero ogólników typu „zadbam o jakość”, „profesjonalnie”.
+- Zero emojek.
+- Język naturalny, nie brzmiący jak AI.
+- Jeśli brakuje danych, zadaj 2 pytania w ofercie (na końcu).</code></pre>
+
+          <div class="grid2">
+            <div class="block callout">
+              <h3>Jak skrócić ofertę?</h3>
+              <p style="margin:0;">
+                Dopisz: <span class="kbd">maks 900 znaków</span> i usuń „pakiety”. Zostaw: plan + deliverables + pytanie.
+              </p>
+            </div>
+            <div class="block callout">
+              <h3>Jak zrobić 3 pakiety?</h3>
+              <p style="margin:0;">
+                Dopisz: <span class="kbd">zaproponuj 3 pakiety: Basic / Standard / Premium</span> z różnicami w zakresie.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="warianty" class="block card">
+          <h2>3) Warianty promptów pod branże</h2>
+          <p>Jeśli działasz w konkretnej niszy, oferta będzie mocniejsza. Poniżej warianty do podmiany w promptach:</p>
+
+          <h3>A) Strona wizytówka (lokalna usługa)</h3>
+          <pre><code>Dopasuj ofertę pod lokalną usługę (np. masaż, kosmetyka, dietetyk).
+Uwzględnij:
+- sekcję „zaufanie”: opinie/FAQ/zdjęcia
+- wyraźny CTA: telefon, formularz, rezerwacje
+- szybkość strony i mobilność jako priorytet
+Deliverables rozszerz o: podstawowe SEO (tytuły, opisy), integracja mapy.</code></pre>
+
+          <h3>B) Landing page pod sprzedaż</h3>
+          <pre><code>Dopasuj ofertę pod landing page sprzedażowy.
+Uwzględnij:
+- sekcję korzyści, social proof, FAQ
+- 2 warianty nagłówka (A/B)
+- sugestie do copy na podstawie oferty klienta
+Deliverables rozszerz o: 2 propozycje układu sekcji + rekomendacje CTA.</code></pre>
+
+          <h3>C) Sklep / e-commerce (mały)</h3>
+          <pre><code>Dopasuj ofertę pod mały e-commerce.
+Uwzględnij:
+- proste wdrożenie produktów i kategorii
+- płatności i dostawy (wymień integracje do ustalenia)
+- priorytet: szybkość i stabilność
+Na końcu zadaj pytanie: ile produktów i jakie płatności/dostawy.</code></pre>
+        </div>
+
+        <div id="polerka" class="block card">
+          <h2>4) Polerka jakości i „anti-AI”</h2>
+          <p>Masz ofertę wygenerowaną? Teraz zrób ją bardziej ludzką i spersonalizowaną.</p>
+
+          <h3>Prompt do „od-ChatGPT-owania”</h3>
+          <pre><code>Poniżej wklejam ofertę. Przepisz ją tak, żeby brzmiała naturalnie i po ludzku.
+Zasady:
+- zostaw sens, ale skróć ogólniki
+- usuń powtórzenia i „marketingowy nadmuch”
+- dodaj 1 zdanie bardzo konkretne (na podstawie ogłoszenia), że rozumiesz potrzeby
+- zachowaj strukturę: 1 zdanie -> 4 kroki -> deliverables -> pytanie
+Wynik: max 1200–1500 znaków.
+
+OFERTA:
+{wklej_ofertę}</code></pre>
+
+          <div class="block callout" style="margin-top:12px;">
+            <h3>Mini-checklista oferty (30 sekund)</h3>
+            <ul style="margin:0 0 0 18px;">
+              <li>Czy w pierwszym zdaniu jest parafraza problemu klienta?</li>
+              <li>Czy plan ma konkrety (co robisz w kroku 1/2/3/4)?</li>
+              <li>Czy deliverables to rzeczy „do odebrania” przez klienta?</li>
+              <li>Czy jest 1 pytanie na końcu, które wymusza odpowiedź?</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Placeholder pod reklamy (krok 3) -->
+        <div class="block" aria-label="Reklama">
+          <div style="color:var(--muted); font-size:13px;">[Miejsce na reklamę — np. AdSense]</div>
+        </div>
+
+        <div class="next">
+          <a class="block" href="/poradniki/jak-pisac-dobre-prompty-chatgpt.html">
+            <div style="color:#f6e6b3; font-size:12px; text-transform:uppercase; letter-spacing:.8px;">Poprzedni</div>
+            <h3 style="margin:6px 0 6px;">Jak pisać dobre prompty do ChatGPT</h3>
+            <p style="margin:0; color:var(--muted); font-size:14px;">System 6 elementów + szablon kopiuj–wklej.</p>
+          </a>
+
+          <a class="block" href="/#poradniki">
+            <div style="color:#f6e6b3; font-size:12px; text-transform:uppercase; letter-spacing:.8px;">Dalej</div>
+            <h3 style="margin:6px 0 6px;">Dodamy kolejne poradniki</h3>
+            <p style="margin:0; color:var(--muted); font-size:14px;">Następny: prompty do researchu i streszczeń.</p>
+          </a>
+        </div>
+
+      </article>
+    </section>
+  </main>
+
+  <!-- Twoja stopka -->
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-top">
+        <div>
+          <div style="font-weight:700; color:var(--text); letter-spacing:.6px;">LUMENA Creative</div>
+          <div style="margin-top:6px;">Tworzę strony, które przyciągają uwagę i budzą emocje.</div>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="/">Start</a>
+          <a href="/#kategorie">Kategorie</a>
+          <a href="/#poradniki">Poradniki</a>
+          <a href="/#kontakt">Kontakt</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2025 LUMENA Creative<br />
+        Wszystkie prawa zastrzeżone.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

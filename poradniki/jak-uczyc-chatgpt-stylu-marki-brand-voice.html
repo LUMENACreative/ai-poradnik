@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jak uczyć ChatGPT stylu marki (brand voice) – instrukcja krok po kroku</title>
+  <meta name="description" content="Naucz ChatGPT stylu Twojej marki: zasady, brief, przykłady i prompty. Ustal tone of voice, unikaj chaosu i utrzymaj spójność treści." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="/poradniki/jak-uczyc-chatgpt-stylu-marki-brand-voice.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Poradnik" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:title" content="Jak uczyć ChatGPT stylu marki (brand voice)" />
+  <meta property="og:description" content="Instrukcja: jak zbudować brand voice w ChatGPT i utrzymać spójny ton komunikacji." />
+  <meta property="og:url" content="/poradniki/jak-uczyc-chatgpt-stylu-marki-brand-voice.html" />
+  <meta property="og:image" content="/assets/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jak uczyć ChatGPT stylu marki (brand voice)" />
+  <meta name="twitter:description" content="Brief, zasady, przykłady i prompty do spójnego tone of voice." />
+  <meta name="twitter:image" content="/assets/og.jpg" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Jak uczyć ChatGPT stylu marki (brand voice) – instrukcja krok po kroku",
+    "description": "Naucz ChatGPT stylu Twojej marki: zasady, brief, przykłady i prompty. Ustal tone of voice, unikaj chaosu i utrzymaj spójność treści.",
+    "inLanguage": "pl-PL",
+    "author": {
+      "@type": "Person",
+      "name": "LUMENA Creative"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LUMENA Creative"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <article>
+    <h1>Jak uczyć ChatGPT stylu marki (brand voice) – instrukcja krok po kroku</h1>
+
+    <p>Najczęstszy problem w pracy z AI przy tworzeniu treści marketingowych to brak spójności. Raz tekst brzmi profesjonalnie, raz „na luzie”, a czasem jak szablon z generatora. Da się to uporządkować: ChatGPT może trzymać <strong>brand voice</strong>, jeśli dasz mu jasne zasady, przykłady i procedurę kontroli jakości.</p>
+
+    <h2>Czym jest brand voice i co dokładnie ma „umieć” ChatGPT?</h2>
+    <p><strong>Brand voice</strong> to zestaw reguł językowych i komunikacyjnych, które powinny być stałe niezależnie od kanału (blog, social, mailing, landing). W praktyce AI ma umieć:</p>
+    <ul>
+      <li>utrzymać stały <strong>ton</strong> (formalny / partnerski / ekspercki / przyjazny),</li>
+      <li>używać właściwego <strong>słownictwa</strong> (branżowego lub prostego),</li>
+      <li>trzymać <strong>długość zdań</strong> i tempo tekstu,</li>
+      <li>unikać słów i zwrotów „zakazanych”,</li>
+      <li>stosować stałą <strong>strukturę</strong> (np. krótkie akapity, listy, CTA).</li>
+    </ul>
+
+    <h2>Największy błąd: opisywanie stylu ogólnikami</h2>
+    <p>„Pisz profesjonalnie” albo „pisz jak marketer” nie działa. Zamiast tego potrzebujesz <strong>konkretnych parametrów</strong>: jak brzmi marka, jak nie brzmi, i jak wygląda tekst idealny.</p>
+
+    <h2>Krok 1: Zrób 1-stronicowy brief tone of voice</h2>
+    <p>Skopiuj i uzupełnij ten szablon (możesz wkleić go do promptu):</p>
+
+    <h3>Szablon: Brief brand voice</h3>
+    <ul>
+      <li><strong>Odbiorca:</strong> kto czyta? (poziom wiedzy, branża, sytuacja)</li>
+      <li><strong>Cel:</strong> informować / sprzedawać / budować zaufanie / edukować</li>
+      <li><strong>Ton:</strong> (np. ekspercki i prosty, bez zadęcia)</li>
+      <li><strong>Osobowość marki:</strong> 3–5 cech (np. konkretnie, spokojnie, partnersko)</li>
+      <li><strong>Słowa preferowane:</strong> (lista 10–30)</li>
+      <li><strong>Słowa zakazane:</strong> (lista 10–30)</li>
+      <li><strong>Forma:</strong> Ty/Pan-Pani, długość akapitów, emotikony tak/nie</li>
+      <li><strong>Struktura:</strong> nagłówki, listy, CTA, „zero lania wody”</li>
+    </ul>
+
+    <h2>Krok 2: Daj AI przykłady (najważniejszy element)</h2>
+    <p>Najlepsze wyniki daje metoda „<strong>3 dobre + 1 zły</strong>”:</p>
+    <ul>
+      <li>3 fragmenty tekstu Twojej marki (po 150–300 słów), które są wzorcowe,</li>
+      <li>1 fragment, który jest „zły” (i dlaczego).</li>
+    </ul>
+    <p>Dzięki temu AI nie tylko „wie”, jak pisać — ale też rozumie, czego unikać.</p>
+
+    <h2>Krok 3: Zbuduj prompt bazowy (master prompt)</h2>
+    <p>Poniżej gotowy prompt do skopiowania. Wklej go na start rozmowy i podmieniaj tylko dane w nawiasach.</p>
+
+    <h3>Master prompt: brand voice</h3>
+    <p><strong>Skopiuj:</strong></p>
+    <pre>
+Jesteś copywriterem mojej marki. Twoim celem jest pisać spójnie w naszym brand voice.
+
+1) Odbiorca: [OPIS ODBIORCY]
+2) Cel tekstu: [CEL]
+3) Ton komunikacji: [TON]
+4) Osobowość marki (cechy): [CECHY]
+5) Styl języka:
+- forma: [TY / PAN-PANI]
+- długość zdań: [KRÓTKIE / ŚREDNIE / DŁUŻSZE]
+- akapity: [KRÓTKIE, 2–4 ZDANIA]
+- unikaj lania wody, zero ogólników
+6) Słowa preferowane: [LISTA]
+7) Słowa zakazane: [LISTA]
+8) Struktura:
+- nagłówki H2/H3
+- listy tam, gdzie to pomaga
+- zakończ krótkim podsumowaniem lub CTA
+
+Wymóg jakości:
+- Jeśli brakuje danych, zadaj max 5 pytań doprecyzowujących zamiast zgadywać.
+- Na końcu wypisz krótką checklistę: czy tekst trzyma brand voice (TAK/NIE + co poprawić).
+    </pre>
+
+    <h2>Krok 4: Dodaj „walidator stylu” (kontrola jakości)</h2>
+    <p>Po wygenerowaniu tekstu dodaj drugi prompt, który działa jak redaktor:</p>
+
+    <h3>Prompt: walidator brand voice</h3>
+    <pre>
+Sprawdź powyższy tekst pod kątem brand voice.
+1) Wskaż 5 zdań, które najbardziej nie pasują do stylu (i dlaczego).
+2) Zaproponuj poprawki w tym samym tonie.
+3) Oceń spójność w skali 1–10.
+4) Wypisz słowa/zwroty do usunięcia i proponowane zamienniki.
+    </pre>
+
+    <h2>Krok 5: Ustal „bibliotekę” stałych elementów</h2>
+    <p>Spójność robi się łatwa, gdy część rzeczy jest powtarzalna. Przykłady:</p>
+    <ul>
+      <li>standardowe CTA (3–5 wersji),</li>
+      <li>nagłówki startowe do postów,</li>
+      <li>zestaw zwrotów, których marka używa regularnie,</li>
+      <li>format list i podsumowań.</li>
+    </ul>
+
+    <h2>Najczęstsze problemy i szybkie rozwiązania</h2>
+    <h3>Problem: tekst brzmi „generycznie”</h3>
+    <ul>
+      <li>Dodaj 2–3 przykłady własnych tekstów i wymuś na AI „naśladuj strukturę i rytm”.</li>
+      <li>Dodaj słowa zakazane (np. „w dzisiejszych czasach”, „warto zauważyć”).</li>
+    </ul>
+
+    <h3>Problem: zbyt marketingowo / zbyt agresywnie</h3>
+    <ul>
+      <li>W briefie dopisz: „bez hiperboli, bez obietnic, konkretnie”.</li>
+      <li>Wymuś: „pokaż przykłady, liczby i ograniczenia”.</li>
+    </ul>
+
+    <h3>Problem: AI zgaduje szczegóły</h3>
+    <ul>
+      <li>Dodaj regułę: „jeśli brak danych — pytaj, nie zgaduj”.</li>
+      <li>Użyj walidatora i każ AI wypisać założenia.</li>
+    </ul>
+
+    <h2>Podsumowanie</h2>
+    <p>ChatGPT nie „uczy się” Twojej marki magicznie — ale może pisać spójnie, jeśli dasz mu: konkretny brief, przykłady oraz procedurę walidacji. Najlepszy efekt daje zestaw: <strong>master prompt + przykłady + walidator stylu</strong>. To zamienia AI z generatora w narzędzie do produkcji spójnych treści.</p>
+  </article>
+</body>
+</html>
