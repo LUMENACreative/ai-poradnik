@@ -33,6 +33,19 @@
 
   <!-- VICON / favicon: podmień ścieżkę na swój plik -->
   <link rel="icon" href="/vicon.ico" />
+<!-- Consent Mode v2: default denied (musi być przed AdSense) -->
+<script>
+  window.gtag = window.gtag || function(){};
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+</script>
+
+<!-- AdSense (Auto Ads) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9580411890184512"
+  crossorigin="anonymous"></script>
 
   <style>
     :root{
@@ -545,11 +558,7 @@
   window.gtag = window.gtag || function(){};
 
   // Default consent: denied (zanim user kliknie)
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'analytics_storage': 'denied',
-    'wait_for_update': 500
-  });
+  
 
   function applyConsent(consented){
     gtag('consent', 'update', {
