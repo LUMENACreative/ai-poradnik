@@ -6,7 +6,8 @@
   <title>Poradniki AI — wszystkie artykuły</title>
   <meta name="description" content="Lista poradników AI: prompty, workflow, research, bezpieczeństwo, maile, CV, fact-check. Wyszukiwarka i tagi." />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="/poradniki/" />
+  <link rel="canonical" href="https://lumenaatelier.pl/poradniki/" />
+
 
   <!-- OG + Twitter + theme-color (dodane) -->
   <meta name="theme-color" content="#0b0b0d" />
@@ -17,8 +18,11 @@
   <meta property="og:locale" content="pl_PL" />
   <meta property="og:title" content="Poradniki AI — wszystkie artykuły" />
   <meta property="og:description" content="Lista poradników AI: prompty, workflow, research, bezpieczeństwo, maile, CV, fact-check. Wyszukiwarka i tagi." />
-  <meta property="og:url" content="https://lumena-creative.netlify.app/poradniki/" />
-  <meta property="og:image" content="https://lumena-creative.netlify.app/og.jpg" />
+ <meta property="og:url" content="https://lumenaatelier.pl/poradniki/" />
+<meta property="og:image" content="https://lumenaatelier.pl/assets/og.jpg" />
+
+  
+
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -26,7 +30,9 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Poradniki AI — wszystkie artykuły" />
   <meta name="twitter:description" content="Lista poradników AI: prompty, workflow, research, bezpieczeństwo, maile, CV, fact-check. Wyszukiwarka i tagi." />
-  <meta name="twitter:image" content="https://lumena-creative.netlify.app/og.jpg" />
+  <meta name="twitter:image" content="https://lumenaatelier.pl/assets/og.jpg" />
+
+
 
   <style>
     :root{
@@ -218,7 +224,67 @@
       .menu{display:none}
       .grid{grid-template-columns:1fr}
     }
+    /* ===== ADS (placeholders / slots) ===== */
+.ad-slot{
+  border:1px dashed rgba(255,255,255,.18);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.02);
+  padding: 14px;
+  min-height: 120px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color: var(--muted);
+}
+
+.ad-slot .ad-label{
+  display:block;
+  font-size:12px;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  color: rgba(184,184,195,.85);
+  margin-bottom:6px;
+}
+
+.ad-slot .ad-hint{
+  font-size:13px;
+  line-height:1.5;
+  max-width: 70ch;
+}
+
+.ad-slot--hero{ margin-top: 14px; }
+.ad-slot--mid{ margin-top: 12px; }
+.ad-slot--bottom{ margin-top: 14px; }
+
+/* reklama jako element siatki */
+.ad-card{
+  padding:0; /* ad-slot ma własny padding */
+  border:none;
+  background:transparent;
+  box-shadow:none;
+  min-height: unset;
+}
+.ad-card:hover{ transform:none; border-color: transparent; background: transparent; }
+
+/* Mobile: trochę mniejsze min-height, by nie zabierało całego ekranu */
+@media (max-width: 900px){
+  .ad-slot{ min-height: 96px; padding:12px; }
+}
+/* domyślnie ukryj reklamy dopóki nie ma zgody */
+.ad-consent-hidden{ display:none; }
+
   </style>
+  <!-- Google Consent Mode v2 (must load before any Google tags) -->
+<script>
+  window.gtag = window.gtag || function(){};
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    analytics_storage: 'denied',
+    wait_for_update: 500
+  });
+</script>
+
 </head>
 
 <body>
@@ -252,6 +318,17 @@
     <div class="tagbar" aria-label="Filtry tagów">
       <!-- tagi w JS -->
     </div>
+    <!-- ADS: index hero slot -->
+<div class="ad-slot ad-slot--hero ad-consent-hidden" data-ad-slot="index-hero" aria-label="Reklama">
+
+  <div>
+    <span class="ad-label">Reklama</span>
+    <div class="ad-hint">
+      Miejsce na reklamę (index / hero). Docelowo: AdSense unit lub auto-ads.
+    </div>
+  </div>
+</div>
+
   </section>
 
   <section>
@@ -261,6 +338,17 @@
     </div>
 
     <div class="grid" id="grid" role="list"></div>
+    <!-- ADS: index bottom slot -->
+<div class="ad-slot ad-slot--bottom ad-consent-hidden" data-ad-slot="index-bottom" aria-label="Reklama">
+
+  <div>
+    <span class="ad-label">Reklama</span>
+    <div class="ad-hint">
+      Miejsce na reklamę (index / bottom). Dobre pod stały unit.
+    </div>
+  </div>
+</div>
+
     <div class="empty" id="empty">Brak wyników. Zmień frazę lub usuń filtry.</div>
   </section>
 </main>
@@ -268,8 +356,11 @@
 <footer>
   <div class="footer-wrap">
     © 2025 LUMENA Creative — wszystkie prawa zastrzeżone.
+    &nbsp;•&nbsp;<a href="/polityka-prywatnosci.html">Polityka prywatności</a>
+    &nbsp;•&nbsp;<a href="/polityka-cookies.html">Polityka cookies</a>
   </div>
 </footer>
+
 
 <script>
   // Jedno źródło prawdy dla listy poradników
@@ -404,7 +495,30 @@
     });
 
     grid.innerHTML = "";
-    filtered.forEach(a => grid.appendChild(card(a)));
+
+filtered.forEach((a, idx) => {
+  // Po 3 elementach wstaw reklamę (tylko jeśli jest wystarczająco wyników)
+  if (idx === 3) {
+    const adWrap = document.createElement("div");
+    adWrap.className = "item ad-card";
+    adWrap.setAttribute("role", "listitem");
+    adWrap.innerHTML = `
+      <div class="ad-slot ad-slot--mid ad-consent-hidden" data-ad-slot="index-mid" aria-label="Reklama">
+
+        <div>
+          <span class="ad-label">Reklama</span>
+          <div class="ad-hint">
+            Miejsce na reklamę (index / mid). Wstawiane automatycznie po 3 kartach.
+          </div>
+        </div>
+      </div>
+    `;
+    grid.appendChild(adWrap);
+  }
+
+  grid.appendChild(card(a));
+});
+
 
     count.textContent = `${filtered.length} / ${ARTICLES.length}`;
     empty.style.display = filtered.length ? "none" : "block";
@@ -421,6 +535,88 @@
 
   buildTags();
   render();
+
+  // stub, żeby nie wywalało błędów gdy gtag nie jest jeszcze załadowany
+  window.gtag = window.gtag || function(){};
+
+  // ustaw domyślnie brak zgody (ważne: zanim jakiekolwiek tagi reklam/analityki ruszą)
+  
+    
+  
+
+  function applyConsent(consent){
+    gtag('consent', 'update', {
+      'ad_storage': consent ? 'granted' : 'denied',
+      'analytics_storage': consent ? 'granted' : 'denied'
+    });
+  }
+
+  function setAdsVisibility(consent){
+    const ads = document.querySelectorAll('.ad-slot');
+    ads.forEach(el => {
+      if (consent) el.classList.remove('ad-consent-hidden');
+      else el.classList.add('ad-consent-hidden');
+    });
+  }
 </script>
+
+
+<div id="cookie-banner" style="
+  position:fixed; bottom:0; left:0; right:0;
+  background:#121217; padding:20px; border-top:1px solid rgba(255,255,255,.1);
+  color:#f3f3f5; font-size:15px; z-index:9999;
+">
+  <div style="max-width:900px; margin:0 auto;">
+    <p style="margin:0 0 10px;">
+  Ta strona korzysta z plików cookies w celach technicznych oraz reklamowych (Google AdSense).
+  AI Poradnik jest w pełni darmowy i nigdy nie prosi o dane finansowe ani osobowe.
+  <br />
+  <a href="/polityka-cookies.html" style="color:#f3f3f5; text-decoration:underline;">Polityka cookies</a>
+  &nbsp;•&nbsp;
+  <a href="/polityka-prywatnosci.html" style="color:#f3f3f5; text-decoration:underline;">Polityka prywatności</a>
+</p>
+
+    <button onclick="acceptAll()" style="padding:8px 14px; margin-right:10px; background:#d4af37; border:0; border-radius:8px; cursor:pointer;">
+      Akceptuję
+    </button>
+    <button onclick="denyAll()" style="padding:8px 14px; background:#333; color:#fff; border:0; border-radius:8px; cursor:pointer;">
+      Odrzucam
+    </button>
+  </div>
+</div>
+
+<script>
+function acceptAll(){
+  localStorage.setItem('consent','yes');
+  applyConsent(true);
+  setAdsVisibility(true);
+  document.getElementById('cookie-banner').style.display='none';
+}
+
+function denyAll(){
+  localStorage.setItem('consent','no');
+  applyConsent(false);
+  setAdsVisibility(false);
+  document.getElementById('cookie-banner').style.display='none';
+}
+
+
+const saved = localStorage.getItem('consent');
+
+if(saved === 'yes'){
+  applyConsent(true);
+  setAdsVisibility(true);
+  document.getElementById('cookie-banner').style.display='none';
+} else if(saved === 'no'){
+  applyConsent(false);
+  setAdsVisibility(false);
+  document.getElementById('cookie-banner').style.display='none';
+} else {
+  // brak decyzji: reklamy ukryte, banner widoczny
+  setAdsVisibility(false);
+}
+
+</script>
+
 </body>
 </html>

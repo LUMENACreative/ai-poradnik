@@ -2,10 +2,14 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Porównanie narzędzi AI – ChatGPT, DeepSeek i inne modele</title>
   <meta name="description" content="Porównanie popularnych narzędzi AI: ChatGPT, DeepSeek i alternatywy. Sprawdź, które AI najlepiej sprawdzi się w Twojej pracy." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="/poradniki/porownanie-narzedzi-ai-chatgpt-deepseek.html" />
+
+  <meta name="theme-color" content="#0b0b0d" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
@@ -13,8 +17,8 @@
   <meta property="og:locale" content="pl_PL" />
   <meta property="og:title" content="Porównanie narzędzi AI – ChatGPT vs DeepSeek" />
   <meta property="og:description" content="Które narzędzie AI wybrać? ChatGPT, DeepSeek i inne modele w praktycznym porównaniu." />
-  <meta property="og:url" content="/poradniki/porownanie-narzedzi-ai-chatgpt-deepseek.html" />
-  <meta property="og:image" content="/assets/og.jpg" />
+  <meta property="og:url" content="https://lumenaatelier.pl/poradniki/porownanie-narzedzi-ai-chatgpt-deepseek.html" />
+  <meta property="og:image" content="https://lumenaatelier.pl/assets/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -22,7 +26,212 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Porównanie narzędzi AI – ChatGPT vs DeepSeek" />
   <meta name="twitter:description" content="Różnice, zastosowania i ograniczenia popularnych modeli AI." />
-  <meta name="twitter:image" content="/assets/og.jpg" />
+  <meta name="twitter:image" content="https://lumenaatelier.pl/assets/og.jpg" />
+
+  <!-- =========================================================
+    CONSENT MODE v2 (MUSI BYĆ W <head> i PRZED TAGAMI GOOGLE)
+    Default: denied
+  ========================================================== -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+
+  <!--
+    GOOGLE TAG / GA4 (NA PÓŹNIEJ):
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+    </script>
+
+    ADSENSE (NA PÓŹNIEJ):
+    Gdy dostaniesz ca-pub-XXXX, wklej w HEAD snippet z AdSense (z panelu).
+  -->
+
+  <style>
+    :root{
+      --bg:#0b0b0d;
+      --panel:#121217;
+      --text:#f3f3f5;
+      --muted:#b8b8c3;
+      --gold:#d4af37;
+      --gold-2:#b9912a;
+      --line:rgba(255,255,255,.08);
+      --shadow:0 18px 55px rgba(0,0,0,.55);
+      --radius:18px;
+      --max:1100px;
+      --max-article:820px;
+    }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      background:
+        radial-gradient(900px 450px at 20% 10%, rgba(212,175,55,.10), transparent 60%),
+        radial-gradient(700px 420px at 80% 25%, rgba(212,175,55,.07), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      letter-spacing:.2px;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:26px 18px; }
+
+    header{
+      position:sticky; top:0; z-index:40;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,11,13,.80), rgba(11,11,13,.35));
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      letter-spacing:.6px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      box-shadow:0 0 18px rgba(212,175,55,.35);
+    }
+    .menu{
+      display:flex; gap:14px; align-items:center;
+      font-size:14px; color:var(--muted);
+    }
+    .menu a{
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+    }
+    .menu a:hover{
+      color:var(--text);
+      border-color: var(--line);
+      background: rgba(255,255,255,.03);
+    }
+
+    .card{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .article-hero{ padding: 32px 0 12px; }
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:7px 12px; border-radius:999px;
+      background: rgba(212,175,55,.10);
+      border: 1px solid rgba(212,175,55,.22);
+      color: #f6e6b3;
+      font-size:13px;
+      margin-bottom:14px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height:1.14;
+      letter-spacing:.2px;
+    }
+    .lead{
+      margin:0;
+      color:var(--muted);
+      max-width: 82ch;
+      font-size: 17px;
+    }
+
+    .content{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 10px 0 26px;
+    }
+    .article{ max-width: var(--max-article); }
+
+    .block{
+      padding: 16px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .block h2{ margin: 0 0 8px; font-size: 20px; }
+    .block h3{ margin: 16px 0 8px; font-size: 16px; }
+    .block p{ margin: 0 0 10px; color: var(--muted); }
+    .block ul, .block ol{ margin: 0 0 10px 18px; color: var(--muted); }
+    .block li{ margin: 6px 0; }
+
+    footer{
+      margin-top: 24px;
+      border-top:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+    }
+    .footer-wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 18px 26px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    @media (max-width: 900px){
+      .menu{ display:none; }
+    }
+
+    /* ===== ADS: slots (article) ===== */
+    .ad-slot{
+      border:1px dashed rgba(255,255,255,.18);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.02);
+      padding: 14px;
+      min-height: 120px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color: var(--muted);
+    }
+    .ad-slot .ad-label{
+      display:block;
+      font-size:12px;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      color: rgba(184,184,195,.85);
+      margin-bottom:6px;
+    }
+    .ad-slot .ad-hint{
+      font-size:13px;
+      line-height:1.5;
+      max-width: 70ch;
+    }
+    .ad-slot--top{ margin: 12px 0 0; }
+    .ad-slot--mid{ margin: 12px 0; }
+    .ad-slot--bottom{ margin: 12px 0 0; }
+
+    @media (max-width: 900px){
+      .ad-slot{ min-height: 96px; padding:12px; }
+    }
+
+    /* domyślnie ukryj reklamy dopóki nie ma zgody */
+    .ad-consent-hidden{ display:none; }
+  </style>
 
   <!-- Schema -->
   <script type="application/ld+json">
@@ -32,51 +241,187 @@
     "headline": "Porównanie narzędzi AI – ChatGPT, DeepSeek i inne modele",
     "description": "Porównanie możliwości ChatGPT, DeepSeek i alternatywnych narzędzi AI.",
     "inLanguage": "pl-PL",
-    "author": {
-      "@type": "Person",
-      "name": "LUMENA Creative"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "LUMENA Creative"
-    }
+    "author": { "@type": "Person", "name": "LUMENA Creative" },
+    "publisher": { "@type": "Organization", "name": "LUMENA Creative" }
   }
   </script>
 </head>
 
 <body>
-  <article>
-    <h1>Porównanie narzędzi AI – ChatGPT, DeepSeek i inne modele</h1>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/" aria-label="Strona główna">
+        <span class="dot" aria-hidden="true"></span>
+        <span>AI Poradnik</span>
+      </a>
 
-    <p>Rynek narzędzi AI rozwija się dynamicznie. ChatGPT przestał być jedynym wyborem. W tym poradniku porównujemy najpopularniejsze modele pod kątem realnych zastosowań.</p>
+      <nav class="menu" aria-label="Nawigacja">
+        <a href="/">Start</a>
+        <a href="/#kategorie">Kategorie</a>
+        <a href="/#poradniki">Najnowsze</a>
+        <a href="/#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
 
-    <h2>ChatGPT – uniwersalny standard</h2>
-    <ul>
-      <li>Świetny do tekstów, ofert, kodu</li>
-      <li>Rozbudowany ekosystem narzędzi</li>
-      <li>Stabilna jakość odpowiedzi</li>
-    </ul>
+  <main class="wrap">
+    <section class="article-hero">
+      <div class="badge">Narzędzia • Porównanie • Workflow</div>
+      <h1>Porównanie narzędzi AI – ChatGPT, DeepSeek i inne modele</h1>
+      <p class="lead">
+        Rynek narzędzi AI rozwija się dynamicznie. ChatGPT przestał być jedynym wyborem.
+        W tym poradniku porównujemy najpopularniejsze modele pod kątem realnych zastosowań.
+      </p>
+    </section>
 
-    <h2>DeepSeek – mocny w analizie i kodzie</h2>
-    <ul>
-      <li>Bardzo dobra praca na danych technicznych</li>
-      <li>Silny w programowaniu i logice</li>
-      <li>Mniej „ludzki” w treściach marketingowych</li>
-    </ul>
+    <section class="content">
+      <article class="article">
+        <!-- ADS: article top -->
+        <div class="ad-slot ad-slot--top ad-consent-hidden" data-ad-slot="article-top" aria-label="Reklama">
+          <div>
+            <span class="ad-label">Reklama</span>
+            <div class="ad-hint">Miejsce na reklamę (TOP).</div>
+          </div>
+        </div>
 
-    <h2>Inne modele AI – kiedy mają sens?</h2>
-    <p>Alternatywy sprawdzają się w wąskich zastosowaniach:</p>
-    <ul>
-      <li>automatyzacja</li>
-      <li>analiza danych</li>
-      <li>zadania stricte techniczne</li>
-    </ul>
+        <div class="block card">
+          <h2>ChatGPT – uniwersalny standard</h2>
+          <ul>
+            <li>Świetny do tekstów, ofert, kodu</li>
+            <li>Rozbudowany ekosystem narzędzi</li>
+            <li>Stabilna jakość odpowiedzi</li>
+          </ul>
+        </div>
 
-    <h2>Które AI wybrać?</h2>
-    <p>Jeśli zależy Ci na wszechstronności – wybierz ChatGPT. Jeśli kod i analiza są priorytetem – DeepSeek może być lepszym wyborem.</p>
+        <div class="block card">
+          <h2>DeepSeek – mocny w analizie i kodzie</h2>
+          <ul>
+            <li>Bardzo dobra praca na danych technicznych</li>
+            <li>Silny w programowaniu i logice</li>
+            <li>Mniej „ludzki” w treściach marketingowych</li>
+          </ul>
+        </div>
 
-    <h2>Podsumowanie</h2>
-    <p>Nie ma jednego „najlepszego” AI. Najlepsze narzędzie to to, które pasuje do Twojego workflow.</p>
-  </article>
+        <div class="block card">
+          <h2>Inne modele AI – kiedy mają sens?</h2>
+          <p>Alternatywy sprawdzają się w wąskich zastosowaniach:</p>
+          <ul>
+            <li>automatyzacja</li>
+            <li>analiza danych</li>
+            <li>zadania stricte techniczne</li>
+          </ul>
+        </div>
+
+        <!-- ADS: article mid -->
+        <div class="ad-slot ad-slot--mid ad-consent-hidden" data-ad-slot="article-mid" aria-label="Reklama">
+          <div>
+            <span class="ad-label">Reklama</span>
+            <div class="ad-hint">Miejsce na reklamę (MID).</div>
+          </div>
+        </div>
+
+        <div class="block card">
+          <h2>Które AI wybrać?</h2>
+          <p>Jeśli zależy Ci na wszechstronności – wybierz ChatGPT. Jeśli kod i analiza są priorytetem – DeepSeek może być lepszym wyborem.</p>
+        </div>
+
+        <div class="block card">
+          <h2>Podsumowanie</h2>
+          <p>Nie ma jednego „najlepszego” AI. Najlepsze narzędzie to to, które pasuje do Twojego workflow.</p>
+        </div>
+
+        <!-- ADS: article bottom -->
+        <div class="ad-slot ad-slot--bottom ad-consent-hidden" data-ad-slot="article-bottom" aria-label="Reklama">
+          <div>
+            <span class="ad-label">Reklama</span>
+            <div class="ad-hint">Miejsce na reklamę (BOTTOM).</div>
+          </div>
+        </div>
+
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-wrap">
+      © 2025 LUMENA Creative — wszystkie prawa zastrzeżone.
+      &nbsp;•&nbsp;<a href="/polityka-prywatnosci.html">Polityka prywatności</a>
+      &nbsp;•&nbsp;<a href="/polityka-cookies.html">Polityka cookies</a>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+    Update consent + widoczność slotów reklamowych (bez "default")
+  ========================================================== -->
+  <script>
+    function applyConsent(consented){
+      gtag('consent', 'update', {
+        'ad_storage': consented ? 'granted' : 'denied',
+        'analytics_storage': consented ? 'granted' : 'denied',
+        'ad_user_data': consented ? 'granted' : 'denied',
+        'ad_personalization': consented ? 'granted' : 'denied'
+      });
+    }
+
+    function setAdsVisibility(consented){
+      document.querySelectorAll("[data-ad-slot]").forEach(el => {
+        if(consented){
+          el.classList.remove("ad-consent-hidden");
+        } else {
+          el.classList.add("ad-consent-hidden");
+        }
+      });
+    }
+
+    function acceptAll(){
+      localStorage.setItem('consent','yes');
+      applyConsent(true);
+      setAdsVisibility(true);
+      const banner = document.getElementById('cookie-banner');
+      if(banner) banner.style.display='none';
+    }
+
+    function denyAll(){
+      localStorage.setItem('consent','no');
+      applyConsent(false);
+      setAdsVisibility(false);
+      const banner = document.getElementById('cookie-banner');
+      if(banner) banner.style.display='none';
+    }
+
+    (function initConsent(){
+      const consent = localStorage.getItem('consent');
+
+      setAdsVisibility(consent === 'yes');
+
+      if(consent){
+        const banner = document.getElementById('cookie-banner');
+        if(banner) banner.style.display='none';
+      }
+
+      if(consent === 'yes') applyConsent(true);
+      if(consent === 'no') applyConsent(false);
+    })();
+  </script>
+
+  <div id="cookie-banner" style="
+    position:fixed; bottom:0; left:0; right:0;
+    background:#121217; padding:20px; border-top:1px solid rgba(255,255,255,.1);
+    color:#f3f3f5; font-size:15px; z-index:9999;
+  ">
+    <div style="max-width:900px; margin:0 auto;">
+      <p style="margin:0 0 10px;">
+        Ta strona korzysta z plików cookies w celach technicznych oraz reklamowych (Google AdSense).
+        AI Poradnik jest w pełni darmowy i nigdy nie prosi o dane finansowe ani osobowe.
+      </p>
+      <button onclick="acceptAll()" style="padding:8px 14px; margin-right:10px; background:#d4af37; border:0; border-radius:8px; cursor:pointer;">
+        Akceptuję
+      </button>
+      <button onclick="denyAll()" style="padding:8px 14px; background:#333; color:#fff; border:0; border-radius:8px; cursor:pointer;">
+        Odrzucam
+      </button>
+    </div>
+  </div>
+
 </body>
 </html>

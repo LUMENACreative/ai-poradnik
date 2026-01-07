@@ -8,7 +8,6 @@
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="/poradniki/chatgpt-do-ofert-useme.html" />
 
-  <!-- OG + Twitter + theme-color (dodane) -->
   <meta name="theme-color" content="#0b0b0d" />
 
   <!-- Open Graph / Facebook -->
@@ -17,8 +16,9 @@
   <meta property="og:locale" content="pl_PL" />
   <meta property="og:title" content="ChatGPT do ofert na Useme — gotowe prompty i schemat odpowiedzi" />
   <meta property="og:description" content="Jak pisać skuteczne oferty na Useme z pomocą ChatGPT: struktura, prompty, warianty pod branże i szybkie poprawki jakości." />
-  <meta property="og:url" content="https://lumena-creative.netlify.app/poradniki/chatgpt-do-ofert-useme.html" />
-  <meta property="og:image" content="https://lumena-creative.netlify.app/og.jpg" />
+  <meta property="og:url" content="https://lumenaatelier.pl/poradniki/chatgpt-do-ofert-useme.html" />
+  <meta property="og:url" content="https://lumenaatelier.pl/poradniki/" />
+
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -26,7 +26,24 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ChatGPT do ofert na Useme — gotowe prompty i schemat odpowiedzi" />
   <meta name="twitter:description" content="Jak pisać skuteczne oferty na Useme z pomocą ChatGPT: struktura, prompty, warianty pod branże i szybkie poprawki jakości." />
-  <meta name="twitter:image" content="https://lumena-creative.netlify.app/og.jpg" />
+  <meta property="og:url" content="https://lumenaatelier.pl/poradniki/" />
+
+  <!-- CONSENT MODE v2 (BOOTSTRAP) — MUSI BYĆ W <head>, PRZED TAGAMI GOOGLE -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+
+    // Default: denied (EU/GDPR). wait_for_update daje czas na decyzję z banera.
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500,
+      ads_data_redaction: true,
+      url_passthrough: true
+    });
+  </script>
 
   <style>
     :root{
@@ -242,6 +259,43 @@
       .grid2{ grid-template-columns: 1fr; }
       .next{ grid-template-columns: 1fr; }
     }
+
+    /* ===== ADS: slots (article) ===== */
+    .ad-slot{
+      border:1px dashed rgba(255,255,255,.18);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.02);
+      padding: 14px;
+      min-height: 120px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color: var(--muted);
+    }
+    .ad-slot .ad-label{
+      display:block;
+      font-size:12px;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      color: rgba(184,184,195,.85);
+      margin-bottom:6px;
+    }
+    .ad-slot .ad-hint{
+      font-size:13px;
+      line-height:1.5;
+      max-width: 70ch;
+    }
+    .ad-slot--top{ margin: 12px 0 0; }
+    .ad-slot--mid{ margin: 12px 0; }
+    .ad-slot--bottom{ margin: 12px 0 0; }
+
+    @media (max-width: 900px){
+      .ad-slot{ min-height: 96px; padding:12px; }
+    }
+
+    /* domyślnie ukryj reklamy dopóki nie ma zgody */
+    .ad-consent-hidden{ display:none; }
   </style>
 
   <!-- Schema.org Article -->
@@ -256,6 +310,13 @@
     "publisher": { "@type": "Organization", "name": "LUMENA Creative" }
   }
   </script>
+
+  <!--
+    ADSENSE (NA PÓŹNIEJ):
+    Gdy dostaniesz ca-pub-XXXX, wkleisz w HEAD snippet z AdSense (dokładnie jak w panelu).
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
+      crossorigin="anonymous"></script>
+  -->
 </head>
 
 <body>
@@ -304,6 +365,14 @@
     <section class="content">
       <article class="article">
 
+        <!-- ADS: article top -->
+        <div class="ad-slot ad-slot--top ad-consent-hidden" data-ad-slot="article-top" aria-label="Reklama">
+          <div>
+            <span class="ad-label">Reklama</span>
+            <div class="ad-hint">Miejsce na reklamę (TOP). Po AdSense: unit lub auto-ads.</div>
+          </div>
+        </div>
+
         <div id="struktura" class="block card">
           <h2>1) Struktura oferty, która działa</h2>
           <p>Trzymaj się krótkiego układu (to najważniejsze):</p>
@@ -338,7 +407,7 @@ OGŁOSZENIE (wklejam):
 {wklej_treść_ogłoszenia}
 
 MÓJ PROFIL / KONTEKST:
-- Specjalizacja: {np. strony www, landing page, UI}
+- Specjalizacja: {np. strony ww, landing page, UI}
 - Czas realizacji: {np. 5–7 dni}
 - Technologie / podejście: {np. HTML/CSS/JS, Webflow, WordPress, SEO podstawowe}
 - Co wyróżnia mnie: {np. szybka komunikacja, estetyka premium, optymalizacja}
@@ -401,6 +470,14 @@ Uwzględnij:
 Na końcu zadaj pytanie: ile produktów i jakie płatności/dostawy.</code></pre>
         </div>
 
+        <!-- ADS: article mid -->
+        <div class="ad-slot ad-slot--mid ad-consent-hidden" data-ad-slot="article-mid" aria-label="Reklama">
+          <div>
+            <span class="ad-label">Reklama</span>
+            <div class="ad-hint">Miejsce na reklamę (MID). Najlepsze miejsce na stały unit.</div>
+          </div>
+        </div>
+
         <div id="polerka" class="block card">
           <h2>4) Polerka jakości i „anti-AI”</h2>
           <p>Masz ofertę wygenerowaną? Teraz zrób ją bardziej ludzką i spersonalizowaną.</p>
@@ -428,11 +505,6 @@ OFERTA:
           </div>
         </div>
 
-        <!-- Placeholder pod reklamy (krok 3) -->
-        <div class="block" aria-label="Reklama">
-          <div style="color:var(--muted); font-size:13px;">[Miejsce na reklamę — np. AdSense]</div>
-        </div>
-
         <div class="next">
           <a class="block" href="/poradniki/jak-pisac-dobre-prompty-chatgpt.html">
             <div style="color:#f6e6b3; font-size:12px; text-transform:uppercase; letter-spacing:.8px;">Poprzedni</div>
@@ -447,11 +519,18 @@ OFERTA:
           </a>
         </div>
 
+        <!-- ADS: article bottom -->
+        <div class="ad-slot ad-slot--bottom ad-consent-hidden" data-ad-slot="article-bottom" aria-label="Reklama">
+          <div>
+            <span class="ad-label">Reklama</span>
+            <div class="ad-hint">Miejsce na reklamę (BOTTOM). Dobre dla drugiego unitu.</div>
+          </div>
+        </div>
+
       </article>
     </section>
   </main>
 
-  <!-- Twoja stopka -->
   <footer>
     <div class="footer-wrap">
       <div class="footer-top">
@@ -464,6 +543,8 @@ OFERTA:
           <a href="/#kategorie">Kategorie</a>
           <a href="/#poradniki">Poradniki</a>
           <a href="/#kontakt">Kontakt</a>
+          <a href="/polityka-prywatnosci.html">Polityka prywatności</a>
+          <a href="/polityka-cookies.html">Polityka cookies</a>
         </div>
       </div>
 
@@ -473,5 +554,85 @@ OFERTA:
       </div>
     </div>
   </footer>
+
+  <!-- CMP + Consent Mode v2 (update) + widoczność slotów reklamowych -->
+  <script>
+    // Bezpieczny fallback, gdyby z jakiegoś powodu gtag nie był dostępny
+    window.gtag = window.gtag || function(){};
+
+    function applyConsent(consented){
+      const state = consented ? 'granted' : 'denied';
+
+      gtag('consent', 'update', {
+        ad_storage: state,
+        analytics_storage: state,
+        ad_user_data: state,
+        ad_personalization: state
+      });
+    }
+
+    function setAdsVisibility(consented){
+      document.querySelectorAll("[data-ad-slot]").forEach(el => {
+        if(consented){
+          el.classList.remove("ad-consent-hidden");
+        } else {
+          el.classList.add("ad-consent-hidden");
+        }
+      });
+    }
+
+    function acceptAll(){
+      localStorage.setItem('consent','yes');
+      applyConsent(true);
+      setAdsVisibility(true);
+
+      const banner = document.getElementById('cookie-banner');
+      if(banner) banner.style.display='none';
+    }
+
+    function denyAll(){
+      localStorage.setItem('consent','no');
+      applyConsent(false);
+      setAdsVisibility(false);
+
+      const banner = document.getElementById('cookie-banner');
+      if(banner) banner.style.display='none';
+    }
+
+    (function initConsent(){
+      const consent = localStorage.getItem('consent');
+
+      const hasConsent = (consent === 'yes');
+      setAdsVisibility(hasConsent);
+
+      if(consent){
+        const banner = document.getElementById('cookie-banner');
+        if(banner) banner.style.display='none';
+      }
+
+      if(consent === 'yes') applyConsent(true);
+      if(consent === 'no') applyConsent(false);
+    })();
+  </script>
+
+  <div id="cookie-banner" style="
+    position:fixed; bottom:0; left:0; right:0;
+    background:#121217; padding:20px; border-top:1px solid rgba(255,255,255,.1);
+    color:#f3f3f5; font-size:15px; z-index:9999;
+  ">
+    <div style="max-width:900px; margin:0 auto;">
+      <p style="margin:0 0 10px;">
+        Ta strona korzysta z plików cookies w celach technicznych oraz reklamowych (Google AdSense).
+        AI Poradnik jest w pełni darmowy i nigdy nie prosi o dane finansowe ani osobowe.
+      </p>
+      <button onclick="acceptAll()" style="padding:8px 14px; margin-right:10px; background:#d4af37; border:0; border-radius:8px; cursor:pointer;">
+        Akceptuję
+      </button>
+      <button onclick="denyAll()" style="padding:8px 14px; background:#333; color:#fff; border:0; border-radius:8px; cursor:pointer;">
+        Odrzucam
+      </button>
+    </div>
+  </div>
+
 </body>
 </html>

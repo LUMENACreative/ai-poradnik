@@ -9,14 +9,16 @@
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="/poradniki/jak-tworzyc-strony-www-z-chatgpt.html" />
 
+  <meta name="theme-color" content="#0b0b0d" />
+
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="AI Poradnik — LUMENA Creative" />
+  <meta property="og:site_name" content="AI Poradnik" />
   <meta property="og:locale" content="pl_PL" />
   <meta property="og:title" content="Jak tworzyć strony WWW z ChatGPT — workflow, prompty i checklista" />
   <meta property="og:description" content="System tworzenia stron z AI: brief → struktura → copy → anti-AI → audyt → publikacja. Gotowe prompty i checklisty." />
-  <meta property="og:url" content="https://lumena-creative.netlify.app/poradniki/jak-tworzyc-strony-www-z-chatgpt.html" />
-  <meta property="og:image" content="https://lumena-creative.netlify.app/og.jpg" />
+  <meta property="og:url" content="https://lumenaatelier.pl/poradniki/jak-tworzyc-strony-www-z-chatgpt.html" />
+  <meta property="og:image" content="https://lumenaatelier.pl/assets/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -24,9 +26,24 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Jak tworzyć strony WWW z ChatGPT — workflow i prompty" />
   <meta name="twitter:description" content="Jak realnie używać ChatGPT do tworzenia stron WWW: struktura, copy, anti-AI i checklisty publikacji." />
-  <meta name="twitter:image" content="https://lumena-creative.netlify.app/og.jpg" />
+  <meta name="twitter:image" content="https://lumenaatelier.pl/assets/og.jpg" />
 
-  <meta name="theme-color" content="#0b0b0d" />
+  <!-- =========================================================
+    CONSENT MODE v2 (MUSI BYĆ W <head> I PRZED TAGAMI GOOGLE)
+    Default: denied
+  ========================================================== -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
 
   <style>
     :root{
@@ -75,6 +92,43 @@
     footer{margin-top:26px;border-top:1px solid var(--line);background:rgba(0,0,0,.18)}
     .footer-wrap{max-width:var(--max);margin:0 auto;padding:18px;color:var(--muted);font-size:14px}
     @media(max-width:900px){.menu{display:none}.next{grid-template-columns:1fr}}
+
+    /* ===== ADS: slots (article) ===== */
+    .ad-slot{
+      border:1px dashed rgba(255,255,255,.18);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.02);
+      padding: 14px;
+      min-height: 120px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color: var(--muted);
+    }
+    .ad-slot .ad-label{
+      display:block;
+      font-size:12px;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      color: rgba(184,184,195,.85);
+      margin-bottom:6px;
+    }
+    .ad-slot .ad-hint{
+      font-size:13px;
+      line-height:1.5;
+      max-width: 70ch;
+    }
+    .ad-slot--top{ margin: 12px 0 0; }
+    .ad-slot--mid{ margin: 12px 0; }
+    .ad-slot--bottom{ margin: 12px 0 0; }
+
+    @media (max-width: 900px){
+      .ad-slot{ min-height: 96px; padding:12px; }
+    }
+
+    /* domyślnie ukryj reklamy dopóki nie ma zgody */
+    .ad-consent-hidden{ display:none; }
   </style>
 
   <script type="application/ld+json">
@@ -88,6 +142,18 @@
     "publisher":{"@type":"Organization","name":"LUMENA Creative"}
   }
   </script>
+
+  <!--
+    GOOGLE TAG (NA PÓŹNIEJ – GA4):
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+    </script>
+
+    ADSENSE (NA PÓŹNIEJ):
+    Gdy dostaniesz ca-pub-XXXX, wklej w HEAD snippet z AdSense (z panelu).
+  -->
 </head>
 
 <body>
@@ -113,6 +179,14 @@
   </section>
 
   <article class="article">
+    <!-- ADS: article top -->
+    <div class="ad-slot ad-slot--top ad-consent-hidden" data-ad-slot="article-top" aria-label="Reklama">
+      <div>
+        <span class="ad-label">Reklama</span>
+        <div class="ad-hint">Miejsce na reklamę (TOP).</div>
+      </div>
+    </div>
+
     <div class="block callout">
       <h2>Dla kogo jest ten poradnik</h2>
       <ul>
@@ -142,6 +216,14 @@
         <li>audyt UX + SEO</li>
         <li>publikacja</li>
       </ol>
+    </div>
+
+    <!-- ADS: article mid -->
+    <div class="ad-slot ad-slot--mid ad-consent-hidden" data-ad-slot="article-mid" aria-label="Reklama">
+      <div>
+        <span class="ad-label">Reklama</span>
+        <div class="ad-hint">Miejsce na reklamę (MID).</div>
+      </div>
     </div>
 
     <div class="block">
@@ -175,8 +257,12 @@ Bez korporacyjnego tonu.</code></pre>
       </ul>
     </div>
 
-    <div class="block" aria-label="Reklama">
-      <div style="color:var(--muted);font-size:13px;">[Miejsce na reklamę]</div>
+    <!-- EXTRA AD SLOT (zamiast luźnego bloku) -->
+    <div class="ad-slot ad-slot--mid ad-consent-hidden" data-ad-slot="article-extra" aria-label="Reklama">
+      <div>
+        <span class="ad-label">Reklama</span>
+        <div class="ad-hint">Miejsce na reklamę (EXTRA).</div>
+      </div>
     </div>
 
     <div class="next">
@@ -187,13 +273,97 @@ Bez korporacyjnego tonu.</code></pre>
         <strong>Wróć:</strong><br/>Wszystkie poradniki
       </a>
     </div>
+
+    <!-- ADS: article bottom -->
+    <div class="ad-slot ad-slot--bottom ad-consent-hidden" data-ad-slot="article-bottom" aria-label="Reklama">
+      <div>
+        <span class="ad-label">Reklama</span>
+        <div class="ad-hint">Miejsce na reklamę (BOTTOM).</div>
+      </div>
+    </div>
   </article>
 </main>
 
 <footer>
   <div class="footer-wrap">
     © 2025 LUMENA Creative — wszystkie prawa zastrzeżone.
+    &nbsp;•&nbsp;<a href="/polityka-prywatnosci.html">Polityka prywatności</a>
+    &nbsp;•&nbsp;<a href="/polityka-cookies.html">Polityka cookies</a>
   </div>
 </footer>
+
+<!-- =========================================================
+  Update consent + widoczność slotów reklamowych
+========================================================== -->
+<script>
+  function applyConsent(consented){
+    gtag('consent', 'update', {
+      'ad_storage': consented ? 'granted' : 'denied',
+      'analytics_storage': consented ? 'granted' : 'denied',
+      'ad_user_data': consented ? 'granted' : 'denied',
+      'ad_personalization': consented ? 'granted' : 'denied'
+    });
+  }
+
+  function setAdsVisibility(consented){
+    document.querySelectorAll("[data-ad-slot]").forEach(el => {
+      if(consented){
+        el.classList.remove("ad-consent-hidden");
+      } else {
+        el.classList.add("ad-consent-hidden");
+      }
+    });
+  }
+
+  function acceptAll(){
+    localStorage.setItem('consent','yes');
+    applyConsent(true);
+    setAdsVisibility(true);
+    const banner = document.getElementById('cookie-banner');
+    if(banner) banner.style.display='none';
+  }
+
+  function denyAll(){
+    localStorage.setItem('consent','no');
+    applyConsent(false);
+    setAdsVisibility(false);
+    const banner = document.getElementById('cookie-banner');
+    if(banner) banner.style.display='none';
+  }
+
+  (function initConsent(){
+    const consent = localStorage.getItem('consent');
+
+    setAdsVisibility(consent === 'yes');
+
+    if(consent){
+      const banner = document.getElementById('cookie-banner');
+      if(banner) banner.style.display='none';
+    }
+
+    if(consent === 'yes') applyConsent(true);
+    if(consent === 'no') applyConsent(false);
+  })();
+</script>
+
+<div id="cookie-banner" style="
+  position:fixed; bottom:0; left:0; right:0;
+  background:#121217; padding:20px; border-top:1px solid rgba(255,255,255,.1);
+  color:#f3f3f5; font-size:15px; z-index:9999;
+">
+  <div style="max-width:900px; margin:0 auto;">
+    <p style="margin:0 0 10px;">
+      Ta strona korzysta z plików cookies w celach technicznych oraz reklamowych (Google AdSense).
+      AI Poradnik jest w pełni darmowy i nigdy nie prosi o dane finansowe ani osobowe.
+    </p>
+    <button onclick="acceptAll()" style="padding:8px 14px; margin-right:10px; background:#d4af37; border:0; border-radius:8px; cursor:pointer;">
+      Akceptuję
+    </button>
+    <button onclick="denyAll()" style="padding:8px 14px; background:#333; color:#fff; border:0; border-radius:8px; cursor:pointer;">
+      Odrzucam
+    </button>
+  </div>
+</div>
+
 </body>
 </html>

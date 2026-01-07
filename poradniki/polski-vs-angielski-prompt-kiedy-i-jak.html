@@ -8,17 +8,16 @@
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="/poradniki/polski-vs-angielski-prompt-kiedy-i-jak.html" />
 
-  <!-- OG + Twitter + theme-color (dodane) -->
   <meta name="theme-color" content="#0b0b0d" />
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:site_name" content="AI Poradnik — LUMENA Creative" />
+  <!-- Open Graph -->
   <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI Poradnik" />
   <meta property="og:locale" content="pl_PL" />
   <meta property="og:title" content="Polski vs angielski prompt — kiedy pisać po angielsku i jak to robić" />
   <meta property="og:description" content="Kiedy prompt po angielsku daje lepsze wyniki, a kiedy polski jest wystarczający. Gotowe szablony tłumaczenia intencji i kontroli stylu." />
-  <meta property="og:url" content="https://lumena-creative.netlify.app/poradniki/polski-vs-angielski-prompt-kiedy-i-jak.html" />
-  <meta property="og:image" content="https://lumena-creative.netlify.app/og.jpg" />
+  <meta property="og:url" content="https://lumenaatelier.pl/poradniki/polski-vs-angielski-prompt-kiedy-i-jak.html" />
+  <meta property="og:image" content="https://lumenaatelier.pl/assets/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -26,7 +25,36 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Polski vs angielski prompt — kiedy pisać po angielsku i jak to robić" />
   <meta name="twitter:description" content="Kiedy prompt po angielsku daje lepsze wyniki, a kiedy polski jest wystarczający. Gotowe szablony tłumaczenia intencji i kontroli stylu." />
-  <meta name="twitter:image" content="https://lumena-creative.netlify.app/og.jpg" />
+  <meta name="twitter:image" content="https://lumenaatelier.pl/assets/og.jpg" />
+
+  <!-- =========================================================
+    CONSENT MODE v2 (MUSI BYĆ W <head> i PRZED TAGAMI GOOGLE)
+    Default: denied
+  ========================================================== -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+
+  <!--
+    GOOGLE TAG / GA4 (NA PÓŹNIEJ):
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+    </script>
+
+    ADSENSE (NA PÓŹNIEJ):
+    Gdy dostaniesz ca-pub-XXXX, wklej w HEAD snippet z AdSense (z panelu).
+  -->
 
   <style>
     :root{
@@ -257,11 +285,62 @@
     .footer-top a:hover{ opacity:1; }
     .footer-bottom{ color:var(--muted); }
 
+    .legal{
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .legal a{ color: var(--text); opacity:.9; }
+    .legal a:hover{ opacity:1; }
+
     @media (max-width: 900px){
       .menu{ display:none; }
       .grid2{ grid-template-columns: 1fr; }
       .next{ grid-template-columns: 1fr; }
     }
+
+    /* ===== ADS: slots (article) ===== */
+    .ad-slot{
+      border:1px dashed rgba(255,255,255,.18);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.02);
+      padding: 14px;
+      min-height: 120px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color: var(--muted);
+    }
+    .ad-slot .ad-label{
+      display:block;
+      font-size:12px;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      color: rgba(184,184,195,.85);
+      margin-bottom:6px;
+    }
+    .ad-slot .ad-hint{
+      font-size:13px;
+      line-height:1.5;
+      max-width: 70ch;
+    }
+    .ad-slot--top{ margin: 12px 0 0; }
+    .ad-slot--mid{ margin: 12px 0; }
+    .ad-slot--bottom{ margin: 12px 0 0; }
+
+    @media (max-width: 900px){
+      .ad-slot{ min-height: 96px; padding:12px; }
+    }
+
+    /* domyślnie ukryj reklamy dopóki nie ma zgody */
+    .ad-consent-hidden{ display:none; }
   </style>
 
   <!-- Schema.org Article -->
@@ -324,6 +403,13 @@
 
     <section class="content">
       <article class="article">
+        <!-- ADS: article top -->
+        <div class="ad-slot ad-slot--top ad-consent-hidden" data-ad-slot="article-top" aria-label="Reklama">
+          <div>
+            <span class="ad-label">Reklama</span>
+            <div class="ad-hint">Miejsce na reklamę (TOP).</div>
+          </div>
+        </div>
 
         <div id="kiedy" class="block card">
           <h2>1) Kiedy pisać po polsku, a kiedy po angielsku</h2>
@@ -395,6 +481,14 @@
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <!-- ADS: article mid -->
+        <div class="ad-slot ad-slot--mid ad-consent-hidden" data-ad-slot="article-mid" aria-label="Reklama">
+          <div>
+            <span class="ad-label">Reklama</span>
+            <div class="ad-hint">Miejsce na reklamę (MID).</div>
+          </div>
         </div>
 
         <div id="szablony" class="block card">
@@ -488,7 +582,6 @@ TEKST:
           </div>
         </div>
 
-        <!-- Placeholder pod reklamy (krok 3) -->
         <div class="block" aria-label="Reklama">
           <div style="color:var(--muted); font-size:13px;">[Miejsce na reklamę — np. AdSense]</div>
         </div>
@@ -507,11 +600,18 @@ TEKST:
           </a>
         </div>
 
+        <!-- ADS: article bottom -->
+        <div class="ad-slot ad-slot--bottom ad-consent-hidden" data-ad-slot="article-bottom" aria-label="Reklama">
+          <div>
+            <span class="ad-label">Reklama</span>
+            <div class="ad-hint">Miejsce na reklamę (BOTTOM).</div>
+          </div>
+        </div>
+
       </article>
     </section>
   </main>
 
-  <!-- Twoja stopka -->
   <footer>
     <div class="footer-wrap">
       <div class="footer-top">
@@ -531,7 +631,87 @@ TEKST:
         © 2025 LUMENA Creative<br />
         Wszystkie prawa zastrzeżone.
       </div>
+
+      <div class="legal" aria-label="Linki prawne">
+        <a href="/polityka-prywatnosci.html">Polityka prywatności</a>
+        <span style="opacity:.6;">•</span>
+        <a href="/polityka-cookies.html">Polityka cookies</a>
+      </div>
     </div>
   </footer>
+
+  <!-- =========================================================
+    Update consent + widoczność slotów reklamowych
+  ========================================================== -->
+  <script>
+    function applyConsent(consented){
+      gtag('consent', 'update', {
+        'ad_storage': consented ? 'granted' : 'denied',
+        'analytics_storage': consented ? 'granted' : 'denied',
+        'ad_user_data': consented ? 'granted' : 'denied',
+        'ad_personalization': consented ? 'granted' : 'denied'
+      });
+    }
+
+    function setAdsVisibility(consented){
+      document.querySelectorAll("[data-ad-slot]").forEach(el => {
+        if(consented){
+          el.classList.remove("ad-consent-hidden");
+        } else {
+          el.classList.add("ad-consent-hidden");
+        }
+      });
+    }
+
+    function acceptAll(){
+      localStorage.setItem('consent','yes');
+      applyConsent(true);
+      setAdsVisibility(true);
+      const banner = document.getElementById('cookie-banner');
+      if(banner) banner.style.display='none';
+    }
+
+    function denyAll(){
+      localStorage.setItem('consent','no');
+      applyConsent(false);
+      setAdsVisibility(false);
+      const banner = document.getElementById('cookie-banner');
+      if(banner) banner.style.display='none';
+    }
+
+    (function initConsent(){
+      const consent = localStorage.getItem('consent');
+
+      setAdsVisibility(consent === 'yes');
+
+      if(consent){
+        const banner = document.getElementById('cookie-banner');
+        if(banner) banner.style.display='none';
+      }
+
+      if(consent === 'yes') applyConsent(true);
+      if(consent === 'no') applyConsent(false);
+    })();
+  </script>
+
+  <div id="cookie-banner" style="
+    position:fixed; bottom:0; left:0; right:0;
+    background:#121217; padding:20px; border-top:1px solid rgba(255,255,255,.1);
+    color:#f3f3f5; font-size:15px; z-index:9999;
+  ">
+    <div style="max-width:900px; margin:0 auto;">
+      <p style="margin:0 0 10px;">
+        Ta strona korzysta z plików cookies w celach technicznych oraz reklamowych (Google AdSense).
+        AI Poradnik jest w pełni darmowy i nigdy nie prosi o dane finansowe ani osobowe.
+      </p>
+      <button onclick="acceptAll()" style="padding:8px 14px; margin-right:10px; background:#d4af37; border:0; border-radius:8px; cursor:pointer;">
+        Akceptuję
+      </button>
+      <button onclick="denyAll()" style="padding:8px 14px; background:#333; color:#fff; border:0; border-radius:8px; cursor:pointer;">
+        Odrzucam
+      </button>
+    </div>
+  </div>
+
 </body>
 </html>

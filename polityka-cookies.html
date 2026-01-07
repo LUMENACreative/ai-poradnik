@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Polityka cookies — AI Poradnik</title>
+  <meta name="description" content="Polityka cookies dotycząca plików technicznych, analitycznych i reklamowych (Google AdSense). Pełna zgodność RODO." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://lumenaatelier.pl/polityka-cookies.html" />
+
+  <meta name="theme-color" content="#0b0b0d" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="AI Poradnik — LUMENA Creative" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:title" content="Polityka cookies — AI Poradnik" />
+  <meta property="og:description" content="Polityka cookies dotycząca plików technicznych, analitycznych i reklamowych (Google AdSense). Pełna zgodność RODO." />
+  <meta property="og:url" content="https://lumenaatelier.pl/polityka-cookies.html" />
+  <meta property="og:image" content="https://lumenaatelier.pl/assets/og.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Polityka cookies — AI Poradnik" />
+  <meta name="twitter:description" content="Polityka cookies dotycząca plików technicznych, analitycznych i reklamowych (Google AdSense)." />
+  <meta name="twitter:image" content="https://lumenaatelier.pl/assets/og.jpg" />
+
+  <style>
+    body{
+      margin:0;
+      padding:26px 18px;
+      max-width:900px;
+      color:#f3f3f5;
+      background:#0b0b0d;
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+    a{ color:#f3f3f5; text-decoration:underline; }
+  </style>
+</head>
+
+<body>
+
+<h1>Polityka plików cookies</h1>
+
+<p>Ostatnia aktualizacja: 2025</p>
+
+<h2>1. Czym są pliki cookies</h2>
+<p>Cookies to małe pliki zapisywane w przeglądarce, które umożliwiają działanie strony i funkcje reklamowe.</p>
+
+<h2>2. Rodzaje cookies używane na stronie</h2>
+<ul>
+  <li><strong>Techniczne</strong> — niezbędne do działania strony.</li>
+  <li><strong>Analityczne</strong> — w celach statystycznych.</li>
+  <li><strong>Reklamowe</strong> (Google AdSense) — personalizacja reklam.</li>
+</ul>
+
+<h2>3. Jak zarządzać cookies</h2>
+<p>
+  Użytkownik może przy pierwszej wizycie wybrać rodzaj zgody w panelu CMP.
+  Może również usunąć cookies w ustawieniach przeglądarki.
+</p>
+
+<!-- Consent Mode v2 (stub + default + update) -->
+<script>
+  window.gtag = window.gtag || function(){};
+
+  // Default consent: denied (zanim user kliknie)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+
+  function applyConsent(consented){
+    gtag('consent', 'update', {
+      'ad_storage': consented ? 'granted' : 'denied',
+      'analytics_storage': consented ? 'granted' : 'denied'
+    });
+  }
+</script>
+
+<div id="cookie-banner" style="
+  position:fixed; bottom:0; left:0; right:0;
+  background:#121217; padding:20px; border-top:1px solid rgba(255,255,255,.1);
+  color:#f3f3f5; font-size:15px; z-index:9999;
+">
+  <div style="max-width:900px; margin:0 auto;">
+    <p style="margin:0 0 10px;">
+      Ta strona korzysta z plików cookies w celach technicznych oraz reklamowych (Google AdSense).
+      AI Poradnik jest w pełni darmowy i nigdy nie prosi o dane finansowe ani osobowe.
+      <br />
+      <a href="/polityka-prywatnosci.html" style="color:#f3f3f5; text-decoration:underline;">Polityka prywatności</a>
+      &nbsp;•&nbsp;
+      <a href="/polityka-cookies.html" style="color:#f3f3f5; text-decoration:underline;">Polityka cookies</a>
+    </p>
+
+    <button onclick="acceptAll()" style="padding:8px 14px; margin-right:10px; background:#d4af37; border:0; border-radius:8px; cursor:pointer;">
+      Akceptuję
+    </button>
+    <button onclick="denyAll()" style="padding:8px 14px; background:#333; color:#fff; border:0; border-radius:8px; cursor:pointer;">
+      Odrzucam
+    </button>
+  </div>
+</div>
+
+<script>
+  function acceptAll(){
+    localStorage.setItem('consent','yes');
+    applyConsent(true);
+    const banner = document.getElementById('cookie-banner');
+    if(banner) banner.style.display='none';
+  }
+
+  function denyAll(){
+    localStorage.setItem('consent','no');
+    applyConsent(false);
+    const banner = document.getElementById('cookie-banner');
+    if(banner) banner.style.display='none';
+  }
+
+  (function initConsent(){
+    const saved = localStorage.getItem('consent');
+    const banner = document.getElementById('cookie-banner');
+
+    if(saved === 'yes'){
+      applyConsent(true);
+      if(banner) banner.style.display='none';
+    } else if(saved === 'no'){
+      applyConsent(false);
+      if(banner) banner.style.display='none';
+    } else {
+      // brak decyzji: banner widoczny, consent pozostaje "denied" (default)
+    }
+  })();
+</script>
+
+</body>
+</html>

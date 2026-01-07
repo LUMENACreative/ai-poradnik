@@ -1,88 +1,495 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <title>AI do kodu i analizy – jak wybrać model i narzędzie</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>AI do kodu i analizy — jak wybrać model i narzędzie</title>
   <meta name="description" content="Jak wybierać AI do kodowania i analizy danych: kryteria, testy porównawcze, checklisty i gotowy workflow bez przepalania czasu." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="/poradniki/ai-do-kodu-i-analizy-jak-wybrac.html" />
 
+  <meta name="theme-color" content="#0b0b0d" />
+
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="AI Poradnik" />
+  <meta property="og:site_name" content="AI Poradnik — LUMENA Creative" />
   <meta property="og:locale" content="pl_PL" />
-  <meta property="og:title" content="AI do kodu i analizy – jak wybrać narzędzie" />
-  <meta property="og:description" content="Kryteria wyboru AI do kodowania i analizy + szybkie testy porównawcze." />
-  <meta property="og:url" content="/poradniki/ai-do-kodu-i-analizy-jak-wybrac.html" />
-  <meta property="og:image" content="/assets/og.jpg" />
+  <meta property="og:title" content="AI do kodu i analizy — jak wybrać model i narzędzie" />
+  <meta property="og:description" content="Jak wybierać AI do kodowania i analizy danych: kryteria, testy porównawcze, checklisty i gotowy workflow bez przepalania czasu." />
+  <meta property="og:url" content="https://lumenaatelier.pl/poradniki/ai-do-kodu-i-analizy-jak-wybrac.html" />
+  <meta property="og:url" content="https://lumenaatelier.pl/poradniki/" />
+
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AI do kodu i analizy – jak wybrać" />
+  <meta name="twitter:title" content="AI do kodu i analizy — jak wybrać" />
   <meta name="twitter:description" content="Proste kryteria i testy, które pokażą różnice między modelami AI." />
-  <meta name="twitter:image" content="/assets/og.jpg" />
+  <meta property="og:url" content="https://lumenaatelier.pl/poradniki/" />
+
 
   <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "AI do kodu i analizy – jak wybrać model i narzędzie",
+    "headline": "AI do kodu i analizy — jak wybrać model i narzędzie",
     "description": "Jak wybierać AI do kodowania i analizy danych: kryteria, testy porównawcze, checklisty i gotowy workflow bez przepalania czasu.",
     "inLanguage": "pl-PL",
-    "author": {
-      "@type": "Person",
-      "name": "LUMENA Creative"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "LUMENA Creative"
-    }
+    "author": { "@type": "Person", "name": "LUMENA Creative" },
+    "publisher": { "@type": "Organization", "name": "LUMENA Creative" }
   }
   </script>
+
+  <!-- CONSENT MODE v2 (BOOTSTRAP) — MUSI BYĆ W <head>, PRZED TAGAMI GOOGLE -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+
+    // Default: denied (EU/GDPR). wait_for_update daje czas na decyzję z banera.
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500,
+      ads_data_redaction: true,
+      url_passthrough: true
+    });
+  </script>
+
+  <style>
+    :root{
+      --bg:#0b0b0d;
+      --panel:#121217;
+      --text:#f3f3f5;
+      --muted:#b8b8c3;
+      --gold:#d4af37;
+      --gold-2:#b9912a;
+      --line:rgba(255,255,255,.08);
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
+      --radius:18px;
+      --max:1100px;
+      --max-article: 820px;
+    }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      background:
+        radial-gradient(900px 450px at 20% 10%, rgba(212,175,55,.10), transparent 60%),
+        radial-gradient(700px 420px at 80% 25%, rgba(212,175,55,.07), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      font: 16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      letter-spacing:.2px;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:26px 18px; }
+
+    header{
+      position:sticky; top:0; z-index:40;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,11,13,.80), rgba(11,11,13,.35));
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      max-width:var(--max); margin:0 auto; padding:14px 18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700; letter-spacing:.6px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      box-shadow: 0 0 18px rgba(212,175,55,.35);
+    }
+    .menu{
+      display:flex; gap:14px; align-items:center;
+      font-size:14px; color:var(--muted);
+    }
+    .menu a{
+      padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+    }
+    .menu a:hover{
+      color:var(--text);
+      border-color: var(--line);
+      background: rgba(255,255,255,.03);
+    }
+
+    .card{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .article-hero{ padding: 32px 0 12px; }
+    .article-hero .meta{
+      color: var(--muted);
+      font-size: 14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin: 10px 0 0;
+    }
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:7px 12px; border-radius:999px;
+      background: rgba(212,175,55,.10);
+      border: 1px solid rgba(212,175,55,.22);
+      color: #f6e6b3;
+      font-size:13px;
+      margin-bottom:14px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height:1.14;
+      letter-spacing:.2px;
+    }
+    .lead{
+      margin:0;
+      color:var(--muted);
+      max-width: 82ch;
+      font-size: 17px;
+    }
+
+    .content{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 10px 0 26px;
+    }
+    .article{ max-width: var(--max-article); }
+
+    .block{
+      padding: 16px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .block h2{ margin: 0 0 8px; font-size: 20px; }
+    .block h3{ margin: 16px 0 8px; font-size: 16px; }
+    .block p{ margin: 0 0 10px; color: var(--muted); }
+    .block ul, .block ol{ margin: 0 0 10px 18px; color: var(--muted); }
+    .block li{ margin: 6px 0; }
+
+    .callout{
+      border-color: rgba(212,175,55,.22);
+      background: rgba(212,175,55,.06);
+    }
+
+    footer{
+      margin-top: 24px;
+      border-top:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+    }
+    .footer-wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 18px 26px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .footer-top{
+      display:flex; flex-wrap:wrap; gap:14px;
+      align-items:flex-start; justify-content:space-between;
+      margin-bottom:10px;
+    }
+    .footer-top a{ color:var(--text); opacity:.9; }
+    .footer-top a:hover{ opacity:1; }
+    .footer-bottom{ color:var(--muted); }
+
+    @media (max-width: 900px){
+      .menu{ display:none; }
+    }
+
+    /* ===== ADS: slots (article) ===== */
+    .ad-slot{
+      border:1px dashed rgba(255,255,255,.18);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.02);
+      padding: 14px;
+      min-height: 120px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color: var(--muted);
+    }
+    .ad-slot .ad-label{
+      display:block;
+      font-size:12px;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      color: rgba(184,184,195,.85);
+      margin-bottom:6px;
+    }
+    .ad-slot .ad-hint{
+      font-size:13px;
+      line-height:1.5;
+      max-width: 70ch;
+    }
+    .ad-slot--top{ margin: 12px 0 0; }
+    .ad-slot--mid{ margin: 12px 0; }
+    .ad-slot--bottom{ margin: 12px 0 0; }
+
+    @media (max-width: 900px){
+      .ad-slot{ min-height: 96px; padding:12px; }
+    }
+
+    /* domyślnie ukryj sloty reklamowe dopóki nie ma zgody */
+    .ad-consent-hidden{ display:none; }
+  </style>
+
+  <!--
+    ADSENSE (NA PÓŹNIEJ):
+    Gdy dostaniesz ca-pub-XXXX, wkleisz w HEAD ten snippet (dokładnie jak w AdSense).
+    Na etapie weryfikacji NIE WSTAWIAMY go, bo nie masz jeszcze pub-id.
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
+      crossorigin="anonymous"></script>
+  -->
 </head>
 
 <body>
-  <article>
-    <h1>AI do kodu i analizy – jak wybrać model i narzędzie</h1>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/" aria-label="Strona główna">
+        <span class="dot" aria-hidden="true"></span>
+        <span>AI Poradnik</span>
+      </a>
 
-    <p>W zadaniach technicznych najczęściej przegrywa nie „słabszy model”, tylko <strong>źle dobrany workflow</strong>. Ten poradnik pokazuje, jak wybierać narzędzie AI do kodu i analizy danych w sposób powtarzalny, mierzalny i bez marnowania czasu.</p>
+      <nav class="menu" aria-label="Nawigacja">
+        <a href="/">Start</a>
+        <a href="/#kategorie">Kategorie</a>
+        <a href="/#poradniki">Najnowsze</a>
+        <a href="/#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
 
-    <h2>4 kryteria wyboru AI do zadań technicznych</h2>
-    <ol>
-      <li><strong>Precyzja:</strong> czy model rozumie wymagania i trzyma się ograniczeń?</li>
-      <li><strong>Walidacja:</strong> czy potrafi wskazać ryzyka, braki danych i zaproponować testy?</li>
-      <li><strong>Praca na kontekście:</strong> czy utrzymuje spójność w dłuższych wątkach?</li>
-      <li><strong>Jakość kodu:</strong> czy generuje kod czytelny, modularny i z komentarzami tam, gdzie trzeba?</li>
-    </ol>
+  <main class="wrap">
+    <section class="article-hero">
+      <div class="badge">Narzędzia • Kod • Analiza</div>
+      <h1>AI do kodu i analizy — jak wybrać model i narzędzie</h1>
+      <p class="lead">
+        W zadaniach technicznych najczęściej przegrywa nie „słabszy model”, tylko <strong>źle dobrany workflow</strong>.
+        Ten poradnik pokazuje, jak wybierać narzędzie AI do kodu i analizy danych w sposób powtarzalny, mierzalny i bez marnowania czasu.
+      </p>
 
-    <h2>Test porównawczy w 3 promptach</h2>
-    <p>Użyj tych samych promptów w kilku narzędziach i porównaj wyniki:</p>
+      <div class="meta">
+        <span>Poziom: średni</span>
+        <span>•</span>
+        <span>Czas: 6–10 min</span>
+        <span>•</span>
+        <span>Aktualizacja: 2025</span>
+      </div>
+    </section>
 
-    <h3>Prompt 1: analiza wymagań</h3>
-    <p><strong>„Oto wymagania: [wklej]. Zadaj mi maksymalnie 7 pytań doprecyzowujących. Następnie wypisz założenia i ryzyka.”</strong></p>
+    <section class="content">
+      <article class="article">
 
-    <h3>Prompt 2: kod i testy</h3>
-    <p><strong>„Napisz rozwiązanie w [język]. Dodaj testy jednostkowe i krótki opis, jak je uruchomić.”</strong></p>
+        <!-- ADS: article top -->
+        <div class="ad-slot ad-slot--top ad-consent-hidden" data-ad-slot="article-top" aria-label="Reklama">
+          <div>
+            <span class="ad-label">Reklama</span>
+            <div class="ad-hint">Miejsce na reklamę (TOP). Po AdSense: unit lub auto-ads.</div>
+          </div>
+        </div>
 
-    <h3>Prompt 3: debugowanie</h3>
-    <p><strong>„Mam błąd: [log]. Zaproponuj 3 hipotezy, jak to zdiagnozować i jak potwierdzić każdą z nich.”</strong></p>
+        <div class="block card">
+          <h2>1) 4 kryteria wyboru AI do zadań technicznych</h2>
+          <ol>
+            <li><strong>Precyzja:</strong> czy model rozumie wymagania i trzyma się ograniczeń?</li>
+            <li><strong>Walidacja:</strong> czy potrafi wskazać ryzyka, braki danych i zaproponować testy?</li>
+            <li><strong>Praca na kontekście:</strong> czy utrzymuje spójność w dłuższych wątkach?</li>
+            <li><strong>Jakość kodu:</strong> czy generuje kod czytelny, modularny i z komentarzami tam, gdzie trzeba?</li>
+          </ol>
 
-    <h2>Jak rozpoznać AI, które „zgaduje”</h2>
-    <ul>
-      <li>mówi pewnym tonem, ale bez uzasadnienia,</li>
-      <li>nie dopytuje o kluczowe parametry,</li>
-      <li>pomija testy i walidację,</li>
-      <li>zmienia założenia w trakcie rozmowy.</li>
-    </ul>
+          <div class="block callout" style="margin-top:12px;">
+            <h3>Wskazówka</h3>
+            <p style="margin:0;">
+              Nie wybieraj „najmocniejszego modelu w tabelce”, tylko ten, który najlepiej przechodzi Twoje stałe testy (poniżej).
+            </p>
+          </div>
+        </div>
 
-    <h2>Najlepsza praktyka: AI jako „pair programmer”, nie jako wyrocznia</h2>
-    <p>W technice AI ma być drugim mózgiem: proponuje hipotezy, generuje szkice, sugeruje testy, ale <strong>Ty kontrolujesz wymagania i weryfikujesz wynik</strong>. To podejście znacząco ogranicza błędy i halucynacje.</p>
+        <div class="block card">
+          <h2>2) Test porównawczy w 3 promptach</h2>
+          <p>Użyj tych samych promptów w kilku narzędziach i porównaj wyniki — to najszybszy sposób, żeby zobaczyć realne różnice.</p>
 
-    <h2>Podsumowanie</h2>
-    <p>Dobór AI do kodu i analizy powinien być oparty o kryteria i szybkie testy porównawcze. Jeśli trzymasz stały zestaw promptów i oceniasz wynik pod kątem walidacji i spójności, wybór narzędzia staje się prosty i powtarzalny.</p>
-  </article>
+          <h3>Prompt 1: analiza wymagań</h3>
+          <p><strong>„Oto wymagania: [wklej]. Zadaj mi maksymalnie 7 pytań doprecyzowujących. Następnie wypisz założenia i ryzyka.”</strong></p>
+
+          <h3>Prompt 2: kod i testy</h3>
+          <p><strong>„Napisz rozwiązanie w [język]. Dodaj testy jednostkowe i krótki opis, jak je uruchomić.”</strong></p>
+
+          <h3>Prompt 3: debugowanie</h3>
+          <p><strong>„Mam błąd: [log]. Zaproponuj 3 hipotezy, jak to zdiagnozować i jak potwierdzić każdą z nich.”</strong></p>
+        </div>
+
+        <!-- ADS: article mid -->
+        <div class="ad-slot ad-slot--mid ad-consent-hidden" data-ad-slot="article-mid" aria-label="Reklama">
+          <div>
+            <span class="ad-label">Reklama</span>
+            <div class="ad-hint">Miejsce na reklamę (MID). Najlepsze miejsce na stały unit.</div>
+          </div>
+        </div>
+
+        <div class="block card">
+          <h2>3) Jak rozpoznać AI, które „zgaduje”</h2>
+          <ul>
+            <li>mówi pewnym tonem, ale bez uzasadnienia,</li>
+            <li>nie dopytuje o kluczowe parametry,</li>
+            <li>pomija testy i walidację,</li>
+            <li>zmienia założenia w trakcie rozmowy.</li>
+          </ul>
+        </div>
+
+        <div class="block card">
+          <h2>4) Najlepsza praktyka: AI jako „pair programmer”, nie jako wyrocznia</h2>
+          <p>
+            W technice AI ma być drugim mózgiem: proponuje hipotezy, generuje szkice, sugeruje testy,
+            ale <strong>Ty kontrolujesz wymagania i weryfikujesz wynik</strong>.
+            To podejście znacząco ogranicza błędy i halucynacje.
+          </p>
+        </div>
+
+        <div class="block card">
+          <h2>Podsumowanie</h2>
+          <p>
+            Dobór AI do kodu i analizy powinien być oparty o kryteria i szybkie testy porównawcze.
+            Jeśli trzymasz stały zestaw promptów i oceniasz wynik pod kątem walidacji i spójności,
+            wybór narzędzia staje się prosty i powtarzalny.
+          </p>
+        </div>
+
+        <!-- ADS: article bottom -->
+        <div class="ad-slot ad-slot--bottom ad-consent-hidden" data-ad-slot="article-bottom" aria-label="Reklama">
+          <div>
+            <span class="ad-label">Reklama</span>
+            <div class="ad-hint">Miejsce na reklamę (BOTTOM). Dobre dla drugiego unitu.</div>
+          </div>
+        </div>
+
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-top">
+        <div>
+          <div style="font-weight:700; color:var(--text); letter-spacing:.6px;">LUMENA Creative</div>
+          <div style="margin-top:6px;">Tworzę strony, które przyciągają uwagę i budzą emocje.</div>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="/">Start</a>
+          <a href="/#kategorie">Kategorie</a>
+          <a href="/#poradniki">Poradniki</a>
+          <a href="/#kontakt">Kontakt</a>
+          <a href="/polityka-prywatnosci.html">Polityka prywatności</a>
+          <a href="/polityka-cookies.html">Polityka cookies</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2025 LUMENA Creative<br />
+        Wszystkie prawa zastrzeżone.
+      </div>
+    </div>
+  </footer>
+
+  <!--
+    CMP + Consent Mode v2
+    - Default consent jest ustawiony w <head>
+    - Tu robimy tylko update po decyzji + pokaz/ukryj sloty
+  -->
+  <script>
+    // Bezpieczny fallback, gdyby z jakiegoś powodu gtag nie był dostępny
+    window.gtag = window.gtag || function(){};
+
+    function applyConsent(consented){
+      const state = consented ? 'granted' : 'denied';
+      gtag('consent', 'update', {
+        ad_storage: state,
+        analytics_storage: state,
+        ad_user_data: state,
+        ad_personalization: state
+      });
+    }
+
+    function setAdsVisibility(consented){
+      document.querySelectorAll("[data-ad-slot]").forEach(el => {
+        if(consented){
+          el.classList.remove("ad-consent-hidden");
+        } else {
+          el.classList.add("ad-consent-hidden");
+        }
+      });
+    }
+
+    function acceptAll(){
+      localStorage.setItem('consent','yes');
+      applyConsent(true);
+      setAdsVisibility(true);
+
+      const banner = document.getElementById('cookie-banner');
+      if(banner) banner.style.display='none';
+
+      // AdSense (później): ewentualne "odpalenie" slotów po zgodzie:
+      // try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+    }
+
+    function denyAll(){
+      localStorage.setItem('consent','no');
+      applyConsent(false);
+      setAdsVisibility(false);
+
+      const banner = document.getElementById('cookie-banner');
+      if(banner) banner.style.display='none';
+    }
+
+    (function initConsent(){
+      const consent = localStorage.getItem('consent');
+
+      const hasConsent = (consent === 'yes');
+      setAdsVisibility(hasConsent);
+
+      if(consent){
+        const banner = document.getElementById('cookie-banner');
+        if(banner) banner.style.display='none';
+      }
+
+      if(consent === 'yes') applyConsent(true);
+      if(consent === 'no') applyConsent(false);
+    })();
+  </script>
+
+  <div id="cookie-banner" style="
+    position:fixed; bottom:0; left:0; right:0;
+    background:#121217; padding:20px; border-top:1px solid rgba(255,255,255,.1);
+    color:#f3f3f5; font-size:15px; z-index:9999;
+  ">
+    <div style="max-width:900px; margin:0 auto;">
+      <p style="margin:0 0 10px;">
+        Ta strona korzysta z plików cookies w celach technicznych oraz reklamowych (Google AdSense).
+        AI Poradnik jest w pełni darmowy i nigdy nie prosi o dane finansowe ani osobowe.
+      </p>
+      <button onclick="acceptAll()" style="padding:8px 14px; margin-right:10px; background:#d4af37; border:0; border-radius:8px; cursor:pointer;">
+        Akceptuję
+      </button>
+      <button onclick="denyAll()" style="padding:8px 14px; background:#333; color:#fff; border:0; border-radius:8px; cursor:pointer;">
+        Odrzucam
+      </button>
+    </div>
+  </div>
 </body>
 </html>

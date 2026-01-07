@@ -1,20 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ChatGPT vs inne AI – tabela porównawcza: do czego które narzędzie</title>
   <meta name="description" content="Praktyczna tabela porównawcza AI: ChatGPT i alternatywy. Sprawdź, które narzędzie wybrać do pisania, kodu, analizy, researchu i SEO." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="/poradniki/chatgpt-vs-inne-ai-tabela-porownawcza.html" />
 
+  <!-- theme-color -->
+  <meta name="theme-color" content="#0b0b0d" />
+
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="AI Poradnik" />
+  <meta property="og:site_name" content="AI Poradnik — LUMENA Creative" />
   <meta property="og:locale" content="pl_PL" />
   <meta property="og:title" content="ChatGPT vs inne AI – tabela porównawcza" />
   <meta property="og:description" content="Które AI do pisania, kodu, analizy i researchu? Porównanie w prostych kryteriach." />
-  <meta property="og:url" content="/poradniki/chatgpt-vs-inne-ai-tabela-porownawcza.html" />
-  <meta property="og:image" content="/assets/og.jpg" />
+  <meta property="og:url" content="https://lumenaatelier.pl/poradniki/chatgpt-vs-inne-ai-tabela-porownawcza.html" />
+  <meta property="og:image" content="https://lumenaatelier.pl/assets/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -22,7 +26,265 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ChatGPT vs inne AI – tabela porównawcza" />
   <meta name="twitter:description" content="Porównanie AI pod konkretne zastosowania: teksty, kod, analiza, research." />
-  <meta name="twitter:image" content="/assets/og.jpg" />
+  <meta name="twitter:image" content="https://lumenaatelier.pl/assets/og.jpg" />
+
+  <!-- =========================================================
+    CONSENT MODE v2 (MUSI BYĆ PRZED WSZYSTKIMI TAGAMI GOOGLE)
+    - Default: denied
+    - Update po decyzji użytkownika
+    - Sloty reklam odsłaniamy dopiero po zgodzie
+  ========================================================== -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+
+    // Default consent: denied (zanim użytkownik kliknie baner)
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+
+  <!--
+    GOOGLE TAG (NA PÓŹNIEJ – GA4):
+    Gdy będziesz mieć Measurement ID (G-XXXX), odkomentuj i wklej:
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+    </script>
+
+    ADSENSE (NA PÓŹNIEJ – po akceptacji wniosku i dostaniu ca-pub):
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
+      crossorigin="anonymous"></script>
+  -->
+
+  <style>
+    :root{
+      --bg:#0b0b0d;
+      --panel:#121217;
+      --text:#f3f3f5;
+      --muted:#b8b8c3;
+      --gold:#d4af37;
+      --gold-2:#b9912a;
+      --line:rgba(255,255,255,.08);
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
+      --radius:18px;
+      --max:1100px;
+      --max-article: 820px;
+    }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      background:
+        radial-gradient(900px 450px at 20% 10%, rgba(212,175,55,.10), transparent 60%),
+        radial-gradient(700px 420px at 80% 25%, rgba(212,175,55,.07), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      font: 16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      letter-spacing:.2px;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:26px 18px; }
+
+    header{
+      position:sticky; top:0; z-index:40;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,11,13,.80), rgba(11,11,13,.35));
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      max-width:var(--max); margin:0 auto; padding:14px 18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700; letter-spacing:.6px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      box-shadow: 0 0 18px rgba(212,175,55,.35);
+    }
+    .menu{
+      display:flex; gap:14px; align-items:center;
+      font-size:14px; color:var(--muted);
+    }
+    .menu a{
+      padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+    }
+    .menu a:hover{
+      color:var(--text);
+      border-color: var(--line);
+      background: rgba(255,255,255,.03);
+    }
+
+    .card{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .article-hero{ padding: 32px 0 12px; }
+    .article-hero .meta{
+      color: var(--muted);
+      font-size: 14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin: 10px 0 0;
+    }
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:7px 12px; border-radius:999px;
+      background: rgba(212,175,55,.10);
+      border: 1px solid rgba(212,175,55,.22);
+      color: #f6e6b3;
+      font-size:13px;
+      margin-bottom:14px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height:1.14;
+      letter-spacing:.2px;
+    }
+    .lead{
+      margin:0;
+      color:var(--muted);
+      max-width: 82ch;
+      font-size: 17px;
+    }
+
+    .content{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 10px 0 26px;
+    }
+    .article{ max-width: var(--max-article); }
+
+    .block{
+      padding: 16px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .block h2{ margin: 0 0 8px; font-size: 20px; }
+    .block h3{ margin: 16px 0 8px; font-size: 16px; }
+    .block p{ margin: 0 0 10px; color: var(--muted); }
+    .block ul{ margin: 0 0 10px 18px; color: var(--muted); }
+    .block li{ margin: 6px 0; }
+
+    .callout{
+      border-color: rgba(212,175,55,.22);
+      background: rgba(212,175,55,.06);
+    }
+
+    /* Tabela (żeby wyglądała premium i spójnie) */
+    .table-wrap{
+      margin-top: 10px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: rgba(0,0,0,.20);
+    }
+    table{
+      width:100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    thead th{
+      text-align:left;
+      padding: 12px 12px;
+      color: #f6e6b3;
+      font-weight: 700;
+      background: rgba(212,175,55,.08);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    tbody td{
+      padding: 12px 12px;
+      vertical-align: top;
+      color: var(--muted);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    tbody tr:hover td{
+      background: rgba(255,255,255,.02);
+      color: var(--text);
+    }
+    tbody tr:last-child td{ border-bottom: 0; }
+
+    footer{
+      margin-top: 24px;
+      border-top:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+    }
+    .footer-wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 18px 26px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .footer-top{
+      display:flex; flex-wrap:wrap; gap:14px;
+      align-items:flex-start; justify-content:space-between;
+      margin-bottom:10px;
+    }
+    .footer-top a{ color:var(--text); opacity:.9; }
+    .footer-top a:hover{ opacity:1; }
+    .footer-bottom{ color:var(--muted); }
+
+    @media (max-width: 900px){
+      .menu{ display:none; }
+      table{ font-size: 13px; }
+    }
+
+    /* ===== ADS: slots (article) ===== */
+    .ad-slot{
+      border:1px dashed rgba(255,255,255,.18);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.02);
+      padding: 14px;
+      min-height: 120px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color: var(--muted);
+    }
+    .ad-slot .ad-label{
+      display:block;
+      font-size:12px;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      color: rgba(184,184,195,.85);
+      margin-bottom:6px;
+    }
+    .ad-slot .ad-hint{
+      font-size:13px;
+      line-height:1.5;
+      max-width: 70ch;
+    }
+    .ad-slot--top{ margin: 12px 0 0; }
+    .ad-slot--mid{ margin: 12px 0; }
+    .ad-slot--bottom{ margin: 12px 0 0; }
+
+    @media (max-width: 900px){
+      .ad-slot{ min-height: 96px; padding:12px; }
+    }
+
+    /* domyślnie ukryj reklamy dopóki nie ma zgody */
+    .ad-consent-hidden{ display:none; }
+  </style>
 
   <!-- Schema -->
   <script type="application/ld+json">
@@ -39,67 +301,252 @@
 </head>
 
 <body>
-  <article>
-    <h1>ChatGPT vs inne AI – tabela porównawcza: do czego które narzędzie</h1>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/" aria-label="Strona główna">
+        <span class="dot" aria-hidden="true"></span>
+        <span>AI Poradnik</span>
+      </a>
 
-    <p>Wybór AI przestaje być kwestią „co jest modne”. W praktyce liczy się dopasowanie narzędzia do zadania. Poniżej znajdziesz prostą tabelę decyzyjną oraz kryteria, które realnie robią różnicę.</p>
+      <nav class="menu" aria-label="Nawigacja">
+        <a href="/">Start</a>
+        <a href="/#kategorie">Kategorie</a>
+        <a href="/#poradniki">Najnowsze</a>
+        <a href="/#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
 
-    <h2>Jak czytać porównanie</h2>
-    <p>Nie ma jednego „najlepszego AI”. Są modele lepsze do <strong>stylu i narracji</strong>, inne do <strong>logiki i kodu</strong>, a jeszcze inne do <strong>pracy na źródłach</strong>. Traktuj tabelę jako punkt startowy do własnych testów.</p>
+  <main class="wrap">
+    <section class="article-hero">
+      <div class="badge">Porównanie • Narzędzia • Workflow</div>
+      <h1>ChatGPT vs inne AI – tabela porównawcza: do czego które narzędzie</h1>
+      <p class="lead">
+        Wybór AI przestaje być kwestią „co jest modne”. W praktyce liczy się dopasowanie narzędzia do zadania.
+        Poniżej znajdziesz prostą tabelę decyzyjną oraz kryteria, które realnie robią różnicę.
+      </p>
 
-    <h2>Tabela porównawcza – zastosowania</h2>
-    <table border="1" cellpadding="10" cellspacing="0">
-      <thead>
-        <tr>
-          <th>Zastosowanie</th>
-          <th>Najczęstszy wybór</th>
-          <th>Alternatywa (gdy zależy Ci na…)</th>
-          <th>Na co uważać</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Copywriting / treści sprzedażowe</td>
-          <td>ChatGPT</td>
-          <td>Inne modele do stylu (gdy chcesz „bardziej literacko”)</td>
-          <td>„Pewne” tezy bez dowodów</td>
-        </tr>
-        <tr>
-          <td>SEO i struktura artykułu</td>
-          <td>ChatGPT</td>
-          <td>Narzędzia stricte SEO (gdy potrzebujesz analizy słów kluczowych)</td>
-          <td>Nie mylić struktury z research-em</td>
-        </tr>
-        <tr>
-          <td>Kodowanie i debugowanie</td>
-          <td>Modele techniczne</td>
-          <td>ChatGPT (gdy ważne tłumaczenie i mentoring)</td>
-          <td>Kod może „działać”, ale być zły architektonicznie</td>
-        </tr>
-        <tr>
-          <td>Analiza danych / logika</td>
-          <td>Modele techniczne</td>
-          <td>ChatGPT (gdy chcesz opis + rekomendacje)</td>
-          <td>Brak walidacji i testów</td>
-        </tr>
-        <tr>
-          <td>Research i streszczenia</td>
-          <td>ChatGPT + zasady fact-check</td>
-          <td>Narzędzia z cytowaniem (gdy musisz mieć źródła)</td>
-          <td>Halucynacje i „wymyślone” publikacje</td>
-        </tr>
-      </tbody>
-    </table>
+      <div class="meta">
+        <span>Poziom: każdy</span>
+        <span>•</span>
+        <span>Czas: 5–8 min</span>
+        <span>•</span>
+        <span>Aktualizacja: 2025</span>
+      </div>
+    </section>
 
-    <h2>3 kryteria, które warto testować</h2>
-    <ul>
-      <li><strong>Walidacja:</strong> czy model proponuje testy i weryfikację, czy tylko „generuje”? </li>
-      <li><strong>Umiejętność dopytywania:</strong> czy pyta o brakujące dane, czy zgaduje?</li>
-      <li><strong>Stabilność kontekstu:</strong> czy trzyma się ustaleń w długiej rozmowie?</li>
-    </ul>
+    <section class="content">
+      <article class="article">
 
-    <h2>Podsumowanie</h2>
-    <p>ChatGPT jest świetnym wyborem „domyślnym”, ale najlepsze efekty daje workflow mieszany. Wybieraj narzędzie do zadania, a nie zadanie do narzędzia.</p>
-  </article>
+        <!-- ADS: article top -->
+        <div class="ad-slot ad-slot--top ad-consent-hidden" data-ad-slot="article-top" aria-label="Reklama">
+          <div>
+            <span class="ad-label">Reklama</span>
+            <div class="ad-hint">Miejsce na reklamę (TOP). Po AdSense: unit lub auto-ads.</div>
+          </div>
+        </div>
+
+        <div class="block card">
+          <h2>Jak czytać porównanie</h2>
+          <p>
+            Nie ma jednego „najlepszego AI”. Są modele lepsze do <strong>stylu i narracji</strong>, inne do <strong>logiki i kodu</strong>,
+            a jeszcze inne do <strong>pracy na źródłach</strong>. Traktuj tabelę jako punkt startowy do własnych testów.
+          </p>
+        </div>
+
+        <div class="block card">
+          <h2>Tabela porównawcza – zastosowania</h2>
+          <div class="table-wrap" role="region" aria-label="Tabela porównawcza narzędzi AI">
+            <table>
+              <thead>
+                <tr>
+                  <th>Zastosowanie</th>
+                  <th>Najczęstszy wybór</th>
+                  <th>Alternatywa (gdy zależy Ci na…)</th>
+                  <th>Na co uważać</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Copywriting / treści sprzedażowe</td>
+                  <td>ChatGPT</td>
+                  <td>Inne modele do stylu (gdy chcesz „bardziej literacko”)</td>
+                  <td>„Pewne” tezy bez dowodów</td>
+                </tr>
+                <tr>
+                  <td>SEO i struktura artykułu</td>
+                  <td>ChatGPT</td>
+                  <td>Narzędzia stricte SEO (gdy potrzebujesz analizy słów kluczowych)</td>
+                  <td>Nie mylić struktury z research-em</td>
+                </tr>
+                <tr>
+                  <td>Kodowanie i debugowanie</td>
+                  <td>Modele techniczne</td>
+                  <td>ChatGPT (gdy ważne tłumaczenie i mentoring)</td>
+                  <td>Kod może „działać”, ale być zły architektonicznie</td>
+                </tr>
+                <tr>
+                  <td>Analiza danych / logika</td>
+                  <td>Modele techniczne</td>
+                  <td>ChatGPT (gdy chcesz opis + rekomendacje)</td>
+                  <td>Brak walidacji i testów</td>
+                </tr>
+                <tr>
+                  <td>Research i streszczenia</td>
+                  <td>ChatGPT + zasady fact-check</td>
+                  <td>Narzędzia z cytowaniem (gdy musisz mieć źródła)</td>
+                  <td>Halucynacje i „wymyślone” publikacje</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="block callout" style="margin-top:12px;">
+            <h3>Praktyczna zasada</h3>
+            <p style="margin:0;">
+              Porównuj modele zawsze na tym samym zestawie 2–3 promptów. Jeśli jedno narzędzie wygrywa w 80% Twoich zadań –
+              to ono jest „najlepsze” dla Ciebie.
+            </p>
+          </div>
+        </div>
+
+        <!-- ADS: article mid -->
+        <div class="ad-slot ad-slot--mid ad-consent-hidden" data-ad-slot="article-mid" aria-label="Reklama">
+          <div>
+            <span class="ad-label">Reklama</span>
+            <div class="ad-hint">Miejsce na reklamę (MID). Najlepsze miejsce na stały unit.</div>
+          </div>
+        </div>
+
+        <div class="block card">
+          <h2>3 kryteria, które warto testować</h2>
+          <ul>
+            <li><strong>Walidacja:</strong> czy model proponuje testy i weryfikację, czy tylko „generuje”?</li>
+            <li><strong>Umiejętność dopytywania:</strong> czy pyta o brakujące dane, czy zgaduje?</li>
+            <li><strong>Stabilność kontekstu:</strong> czy trzyma się ustaleń w długiej rozmowie?</li>
+          </ul>
+        </div>
+
+        <div class="block card">
+          <h2>Podsumowanie</h2>
+          <p style="margin:0;">
+            ChatGPT jest świetnym wyborem „domyślnym”, ale najlepsze efekty daje workflow mieszany.
+            Wybieraj narzędzie do zadania, a nie zadanie do narzędzia.
+          </p>
+        </div>
+
+        <!-- ADS: article bottom -->
+        <div class="ad-slot ad-slot--bottom ad-consent-hidden" data-ad-slot="article-bottom" aria-label="Reklama">
+          <div>
+            <span class="ad-label">Reklama</span>
+            <div class="ad-hint">Miejsce na reklamę (BOTTOM). Dobre dla drugiego unitu.</div>
+          </div>
+        </div>
+
+      </article>
+    </section>
+  </main>
+
+  <!-- Stopka (spójna + linki RODO) -->
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-top">
+        <div>
+          <div style="font-weight:700; color:var(--text); letter-spacing:.6px;">LUMENA Creative</div>
+          <div style="margin-top:6px;">Tworzę strony, które przyciągają uwagę i budzą emocje.</div>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="/">Start</a>
+          <a href="/#kategorie">Kategorie</a>
+          <a href="/#poradniki">Poradniki</a>
+          <a href="/#kontakt">Kontakt</a>
+          <a href="/polityka-prywatnosci.html">Polityka prywatności</a>
+          <a href="/polityka-cookies.html">Polityka cookies</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2025 LUMENA Creative<br />
+        Wszystkie prawa zastrzeżone.
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+    CMP (BANER) + LOGIKA: update consent + odsłanianie slotów
+  ========================================================== -->
+  <script>
+    function applyConsent(consented){
+      gtag('consent', 'update', {
+        'ad_storage': consented ? 'granted' : 'denied',
+        'analytics_storage': consented ? 'granted' : 'denied',
+        'ad_user_data': consented ? 'granted' : 'denied',
+        'ad_personalization': consented ? 'granted' : 'denied'
+      });
+    }
+
+    function setAdsVisibility(consented){
+      document.querySelectorAll("[data-ad-slot]").forEach(el => {
+        if(consented){
+          el.classList.remove("ad-consent-hidden");
+        } else {
+          el.classList.add("ad-consent-hidden");
+        }
+      });
+    }
+
+    function acceptAll(){
+      localStorage.setItem('consent','yes');
+      applyConsent(true);
+      setAdsVisibility(true);
+      const banner = document.getElementById('cookie-banner');
+      if(banner) banner.style.display='none';
+    }
+
+    function denyAll(){
+      localStorage.setItem('consent','no');
+      applyConsent(false);
+      setAdsVisibility(false);
+      const banner = document.getElementById('cookie-banner');
+      if(banner) banner.style.display='none';
+    }
+
+    (function initConsent(){
+      const consent = localStorage.getItem('consent');
+
+      // Domyślnie: ukryj sloty dopóki brak zgody
+      setAdsVisibility(consent === 'yes');
+
+      // Jeżeli już jest decyzja, nie pokazuj bannera
+      if(consent){
+        const banner = document.getElementById('cookie-banner');
+        if(banner) banner.style.display='none';
+      }
+
+      // Ustaw consent mode zgodnie z decyzją (jeśli była)
+      if(consent === 'yes') applyConsent(true);
+      if(consent === 'no') applyConsent(false);
+    })();
+  </script>
+
+  <div id="cookie-banner" style="
+    position:fixed; bottom:0; left:0; right:0;
+    background:#121217; padding:20px; border-top:1px solid rgba(255,255,255,.1);
+    color:#f3f3f5; font-size:15px; z-index:9999;
+  ">
+    <div style="max-width:900px; margin:0 auto;">
+      <p style="margin:0 0 10px;">
+        Ta strona korzysta z plików cookies w celach technicznych oraz reklamowych (Google AdSense).
+        AI Poradnik jest w pełni darmowy i nigdy nie prosi o dane finansowe ani osobowe.
+      </p>
+      <button onclick="acceptAll()" style="padding:8px 14px; margin-right:10px; background:#d4af37; border:0; border-radius:8px; cursor:pointer;">
+        Akceptuję
+      </button>
+      <button onclick="denyAll()" style="padding:8px 14px; background:#333; color:#fff; border:0; border-radius:8px; cursor:pointer;">
+        Odrzucam
+      </button>
+    </div>
+  </div>
+
 </body>
 </html>
